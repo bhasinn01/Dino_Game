@@ -1,9 +1,9 @@
 
 answer = 2 ** 5
 print(answer * 100)
-
+import math
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   Read the 2 lines of code ABOVE this _TODO_.  That code:
 #     1. Computes 2 raised to the 5th power,
 #          yielding the object that is the integer 32.
@@ -20,7 +20,7 @@ print(answer * 100)
 ###############################################################################
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Immediately below this _TODO_, write code that:
 #     - Computes 77 plus the cosine of 2.75.
 #         HINT: You will need to import the   math  module (library),
@@ -31,7 +31,9 @@ print(answer * 100)
 #     - Prints the square root of that computed value.
 #   Run your code (fix errors as needed), then change the above _TODO_ to DONE.
 ###############################################################################
-
+compute = 77 + math.cos(2.75)
+print (math.sqrt(compute))
+print (compute ** 0.5)
 ###############################################################################
 # TODO: 3.
 #   Immediately below this _TODO_, write code that computes and prints:
