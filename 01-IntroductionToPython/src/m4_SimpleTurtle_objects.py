@@ -11,10 +11,10 @@ Also:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
+         Neha Bhasin.
 """
 ###############################################################################
-# TODO: 1.
+#DONE: 1.
 #   Yes, that means for YOU to DO things per the following instructions:
 #  _
 #   On Line 14 above, replace   PUT_YOUR_NAME_HERE   with your OWN name.
@@ -27,7 +27,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 import rosegraphics as rg
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -44,7 +44,7 @@ import rosegraphics as rg
 ###############################################################################
 
 ###############################################################################
-# TODO: 3.
+# DONE: 3.
 #   Run this module.  A window will pop up and Turtles will move around.
 #   After the Turtles stop moving,
 #      ** click anywhere in the window to close the window **.
@@ -116,7 +116,7 @@ natasha.speed = 1  # Now slower
 natasha.go_to(rg.Point(-100, 200))
 
 ###############################################################################
-# TODO: 4.
+# DONE: 4.
 #   Your instructor will explain the so-called "dot-trick".
 #   Try it out yourself by typing
 #      natasha.
@@ -132,9 +132,12 @@ natasha.go_to(rg.Point(-100, 200))
 #  _
 #   As always, test by running the module.
 ###############################################################################
-
+natasha.draw_circle(50)
+boris.draw_regular_polygon(5,50)
+boris.pen = rg.Pen("green", 5)
+boris.backward(50)
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   Add a few more lines of your own code to make one of the existing
 #   SimpleTurtles move some more and/or have different characteristics.
 #  _
@@ -143,9 +146,14 @@ natasha.go_to(rg.Point(-100, 200))
 #  _
 #   As always, test by running the module.
 ###############################################################################
-
+natasha.pen_up()
+natasha.go_to(rg.Point(100,0))
+natasha.pen_down()
+natasha.draw_square(50)
+boris.right(135)
+boris.draw_regular_polygon(5,45)
 ###############################################################################
-# TODO: 6.
+# DONE: 6.
 #   The above code  CONSTRUCTS  two SimpleTurtle objects
 #   and gives those objects NAMES:
 #       boris    natasha
@@ -170,9 +178,16 @@ natasha.go_to(rg.Point(-100, 200))
 #  _
 #   As always, test by running the module.
 ###############################################################################
-
+sierra = rg.SimpleTurtle("turtle")
+sierra.pen = rg.Pen("blue", 5)
+sierra.draw_circle(100)
+sierra.pen_up()
+sierra.left(63)
+sierra.forward(100)
+sierra.pen_down()
+sierra.draw_circle(50)
 ###############################################################################
-# TODO: 7.
+# DONE: 7.
 #   Ensure that no blue bars on the scrollbar-thing to the right remain.
 #   Run one more time to be sure that all is still OK.
 #  _
