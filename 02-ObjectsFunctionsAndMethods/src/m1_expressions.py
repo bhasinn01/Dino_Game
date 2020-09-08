@@ -4,14 +4,14 @@ and NAMES and ASSIGNMENT, e.g.    n = n + 1
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 import math
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Do this module while you watch the Session 2 Preparation video for
 #       m1_expressions
 #   Do the exercises in this module when the video says to do so.
@@ -25,7 +25,7 @@ import math
 ###############################################################################
 
 ###############################################################################
-# TODO: 3.  [Do this when the video says to do so.]
+# DONE: 3.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program, paying close attention
 #   to what gets printed.  (The video shows you how to "uncomment" statements.)
 #  _
@@ -35,43 +35,45 @@ import math
 #   and run the program, checking that what gets printed is what you expect.
 ###############################################################################
 
-# print()
-# print("_TODO 3:")
-# print("4 + 8 evaluates to:   ", 4 + 8)
-# print("7 * 10 evaluates to:  ", 7 * 10)
-# print("1.53 + 8 evaluates to:", 1.53 + 8)
+print()
+print("_TODO 3:")
+print("4 + 8 evaluates to:   ", 4 + 8)
+print("7 * 10 evaluates to:  ", 7 * 10)
+print("1.53 + 8 evaluates to:", 1.53 + 8)
+print("8 - 4 evaluates to:  ", 8 - 4)
+print("70 / 10 evaluates to:  ", 70 / 10)
 
 ###############################################################################
-# TODO: 4.  [Do this when the video says to do so.]
+# DONE: 4.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 ###############################################################################
 
-# print()
-# print("_TODO 4:")
-# print("(4 + 2) * 3 evaluates to:", (4 + 2) * 3)
-# print("4 + (2 * 3) evaluates to:", 4 + (2 * 3))
-# print("4 + 2 * 3   evaluates to:", 4 + 2 * 3)
-# print("(4 - 2) + 3 evaluates to:", (4 - 2) + 3)
-# print("4 - (2 + 3) evaluates to:", 4 - (2 + 3))
-# print("4 - 2 + 3   evaluates to:", 4 - 2 + 3)
+print()
+print("_TODO 4:")
+print("(4 + 2) * 3 evaluates to:", (4 + 2) * 3)
+print("4 + (2 * 3) evaluates to:", 4 + (2 * 3))
+print("4 + 2 * 3   evaluates to:", 4 + 2 * 3)
+print("(4 - 2) + 3 evaluates to:", (4 - 2) + 3)
+print("4 - (2 + 3) evaluates to:", 4 - (2 + 3))
+print("4 - 2 + 3   evaluates to:", 4 - 2 + 3)
 
 ###############################################################################
-# TODO: 5.  [Do this when the video says to do so.]
+# DONE: 5.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 ###############################################################################
 
-# print()
-# print("_TODO 5:")
-# print("2 ** 10  evaluates to:", 2 ** 10)
-# print("10 ** 2  evaluates to:", 10 ** 2)
-# print("2 ** 0.5  evaluates to:", 2 ** 0.5)
-# print("10 ** -2  evaluates to:", 10 ** -2)
-# print("10 ** -0.5  evaluates to:", 10 ** -0.5, "(do you see why?")
+print()
+print("_TODO 5:")
+print("2 ** 10  evaluates to:", 2 ** 10)
+print("10 ** 2  evaluates to:", 10 ** 2)
+print("2 ** 0.5  evaluates to:", 2 ** 0.5)
+print("10 ** -2  evaluates to:", 10 ** -2)
+print("10 ** -0.5  evaluates to:", 10 ** -0.5, "(do you see why?")
 
 ###############################################################################
-# TODO: 6.  [Do this when the video says to do so.]
+# DONE: 6.  [Do this when the video says to do so.]
 #   Type some expressions of your own choosing that use combinations of:
 #     -- addition, subtraction
 #     -- multiplication, division
@@ -83,8 +85,11 @@ import math
 #  do Part 1 of the Moodle quiz (on Numbers, Arithmetic, and Precedence).
 ###############################################################################
 
-# print()
-# print("_TODO 6:")
+print()
+print("_TODO 6:")
+print((55 + 2 * 3) ** 2)
+print((8-2)/2)
+print(2 ** (2+5))
 
 ###############################################################################
 # Part 2: Exceptions: Syntax and Run-Time Errors.
