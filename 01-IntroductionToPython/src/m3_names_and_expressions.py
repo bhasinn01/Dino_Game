@@ -35,15 +35,16 @@ compute = 77 + math.cos(2.75)
 print (math.sqrt(compute))
 print (compute ** 0.5)
 ###############################################################################
-# TODO: 3.
+# DONE: 3.
 #   Immediately below this _TODO_, write code that computes and prints:
 #      the square root of ((41 * 88) + (4 * the cosine of 2))
 #   Use as few or as many intermediate names as you feel appropriate.
 #   Run your code (fix errors as needed), then change the above _TODO_ to DONE.
 ###############################################################################
-
+TheAnswer = 4 * math.cos(2)
+print(math.sqrt((41 * 88) + TheAnswer))
 ###############################################################################
-# TODO: 4.
+# DONE : 4.
 #   Immediately below this _TODO_,
 #   write code that computes the square root of 2 in two ways:
 #     1. By using the   math.sqrt   function.
@@ -51,9 +52,10 @@ print (compute ** 0.5)
 #   Print both of the expressions that you write.
 #   Run your code (fix errors as needed), then change the above _TODO_ to DONE.
 ###############################################################################
-
+print(math.sqrt(2))
+print(2 ** 0.5)
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   Every object has a TYPE and a VALUE.  For example,
 #   for the object that is computed by  math.sqrt(2):
 #      Its TYPE is float  (which is shorthand for "floating point number").
@@ -72,9 +74,9 @@ print (compute ** 0.5)
 #       print(type(3.14))
 #   below this _TODO_ and run the program.)
 ###############################################################################
-
+print(type(3.14))
 ###############################################################################
-# TODO: 6.
+# DONE: 6.
 #   Now go through the BLAH objects listed below, one by one.  For each:
 #      1. First try to GUESS its TYPE.
 #      2. Then write code of the form:
@@ -97,9 +99,32 @@ print (compute ** 0.5)
 #   After you have written and run the code to learn the TYPE
 #   of each of the above, change the above _TODO_ to DONE.
 ###############################################################################
-
+#"hello" Guess: String
+print(type("hello"))
+#'hello' Guess: String
+print(type('hello'))
+#"a b c" Guess: String
+print(type("a b c"))
+#3 + 3 Guess: Integer
+print(type(3 + 3))
+#"3" + "3" Guess: Float
+print(type("3" + "3"))
+#2 ** 100 Guess: Integer
+print(type(2 ** 100))
+#2.0 ** 100 Guess: Float
+print(type(2.0 ** 100))
+#math.sin(8) Guess: Float
+print(type(math.sin(8)))
+#math.sin Guess: Boolean
+print(type(math.sin))
+#print Guess: Boolean
+print(type(print))
+#math Guess: Boolean
+print(type(math))
+#"math" Guess: String
+print(type("math"))
 ###############################################################################
-# TODO: 7.
+# DONE: 7.
 #   Ensure that no blue bars on the scrollbar-thing to the right remain.
 #   Run one more time to be sure that all is still OK.
 #  _
