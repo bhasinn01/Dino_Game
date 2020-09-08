@@ -96,7 +96,7 @@ print(2 ** (2+5))
 ###############################################################################
 
 ###############################################################################
-# TODO: 7.  [Do this when the video says to do so.]
+# DONE: 7.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -108,12 +108,13 @@ print(2 ** (2+5))
 #   and finally comment-out your statement to continue to the next _TODO.
 ###############################################################################
 
-# print()
-# print("_TODO 7:")
+print()
+print("_TODO 7:")
 # This is crazy!  Python will make no sense of it!
+# print (This is a syntax error).
 
 ###############################################################################
-# TODO: 8.  [Do this when the video says to do so.]
+# DONE: 8.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed, especially the last red line.
 #   Note that the error-output (in red) may (or may not) appear BEFORE the
@@ -122,13 +123,13 @@ print(2 ** (2+5))
 #   Then comment-out the line that causes the run-time error.
 ###############################################################################
 
-# print()
-# print("_TODO 8:")
-# print("3 + 2 evaluations to:", 3 + 2)
+print()
+print("_TODO 8:")
+print("3 + 2 evaluations to:", 3 + 2)
 # print("3 / 0 evaluations to:", 3 / 0)
 
 ###############################################################################
-# TODO: 9.  [Do this when the video says to do so.]
+# DONE: 9.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed, especially the last red line.
 #   Again note that the error-output (in red) may PRECEDE ordinary output.
@@ -137,12 +138,12 @@ print(2 ** (2+5))
 #   and run the program again to see the result of running the line below it.
 ###############################################################################
 
-# print()
-# print("_TODO 9:")
+print()
+print("_TODO 9:")
 # print("3 / 'hello' evaluations to:", 3 / 'hello')
 
 ###############################################################################
-# TODO: 10.  [Do this when the video says to do so.]
+# DONE : 10.  [Do this when the video says to do so.]
 #   Type some expressions of your own choosing that cause error messages.
 #   Then run the program, paying close attention to the last line
 #   of each error message (in red).
@@ -151,8 +152,11 @@ print(2 ** (2+5))
 #  do Part 2 of the Moodle quiz (on Exceptions: Syntax and Run-Time Errors).
 ###############################################################################
 
-# print()
-# print("_TODO 10:")
+print()
+print("_TODO 10:")
+#PRINT("ERROR")
+#print(0/0 "Do 0/0 because I have no cookies and no friends. Reference to Siri 0/0")
+#print ("stuff"/ "me")
 
 ###############################################################################
 # Part 3: Objects, Types, and Values.
