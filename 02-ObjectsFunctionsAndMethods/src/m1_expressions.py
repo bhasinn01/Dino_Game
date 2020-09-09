@@ -281,7 +281,7 @@ print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 ###############################################################################
 
 ###############################################################################
-# TODO: 16.  [Do this when the video says to do so.]
+# DONE: 16.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -295,23 +295,23 @@ print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 #   that you defined previously.
 ###############################################################################
 
-# print()
-# print("_TODO 16:")
-# first_program = "Hello, world!"
-# print(first_program)
-# print(greeting)
-#
-# greeting = "Hello, earthlings"
-# print(greeting)
-# print(first_program + (greeting * 2))
-#
-# n = 3
-# print(first_program * n)
-# n = 2 * first_program
-# print(n + greeting)
+print()
+print("_TODO 16:")
+first_program = "Hello, world!"
+print(first_program)
+#print(greeting)
+
+greeting = "Hello, earthlings"
+print(greeting)
+print(first_program + (greeting * 2))
+
+n = 3
+print(first_program * n)
+n = 2 * first_program
+print(n + greeting)
 
 ###############################################################################
-# TODO: 17.  [Do this when the video says to do so.]
+# DONE: 17.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -328,18 +328,23 @@ print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 #   Finally, try out your own assignment statements that yield run-time errors.
 ###############################################################################
 
-# print()
-# print("_TODO 17:")
-# r = 0
-# s = -9
-# t = s / r
-# y = "oops" + s
-# u = math.sqrt(-2)
-# v = (-2) ** 0.5
-# print(v)
-
+print()
+print("_TODO 17:")
+r = 0
+s = -9
+#t = s / r
+#y = "oops" + s
+#u = math.sqrt(-2)
+v = (-2) ** 0.5
+print(v)
+x = 0
+stuff = 5
+oh = -4
+#print(x/0)
+#print(math.sqrt(oh))
+#print("wrong" - stuff )
 ###############################################################################
-# TODO: 18.  [Do this when the video says to do so.]
+# DONE: 18.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -348,50 +353,51 @@ print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 #   and run again to check your predictions.
 ###############################################################################
 
-# print()
-# print("_TODO 18:")
-# a = 45
-# 45 = a
-# b = 10
-# c = b + 20
-# b = c
-# print(a, b, c)
+print()
+print("_TODO 18:")
+a = 45
+#45 = a
+b = 10
+c = b + 20
+b = c
+print(a, b, c)
 
 ###############################################################################
-# TODO: 19.  [Do this when the video says to do so.]
+# DONE: 19.  [Do this when the video says to do so.]
 #   Uncomment the following and PREDICT what will get printed.
 #   Then run the program, checking to see whether your prediction is correct.
 ###############################################################################
 
-# print()
-# print("_TODO 19:")
-# x = 5
-# x = x + 1
-# print(x)
-#
-# x = x + 1
-# print(x)
-#
-# x = x + 1
-# print(x)
-
+print()
+print("_TODO 19:")
+x = 5
+x = x + 1
+print(x)
+# prediction: 6
+x = x + 1
+print(x)
+# prediction: 7
+x = x + 1
+print(x)
+# prediction: 8
 ###############################################################################
-# TODO: 20.  [Do this when the video says to do so.]
+# DONE: 20.  [Do this when the video says to do so.]
 #   Uncomment the following and PREDICT what will get printed.
 #   (Hint: what gets printed is  NOT  75 10.)
 #   Then run the program, checking to see whether your prediction is correct.
 ###############################################################################
 
-# print()
-# print("_TODO 20:")
-# x = 10
-# y = 75
-# x = y
-# y = x
-# print(x, y)
+print()
+print("_TODO 20:")
+x = 10
+y = 75
+x = y
+y = x
+print(x, y)
+# prediction: 75, 75
 
 ###############################################################################
-# TODO: 21.  [Do this when the video says to do so.]
+# DONE: 21.  [Do this when the video says to do so.]
 #  The statements below make x and y refer to random integers between 1 and 99,
 #  then prints the values of x and y.
 #  _
@@ -407,8 +413,12 @@ print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 #  (on Names, Variables, and Assignment).
 ###############################################################################
 
-# print()
-# print("_TODO 22:")
-# x = random.randint(1, 99)
-# y = random.randint(1, 99)
-# print(x, y)
+print()
+print("_TODO 22:")
+x = random.randint(1, 99)
+y = random.randint(1, 99)
+print(x, y)
+z = x
+x = y
+y = z
+print(x, y)
