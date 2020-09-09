@@ -163,29 +163,39 @@ print("_TODO 10:")
 ###############################################################################
 
 ###############################################################################
-# TODO: 11.  [Do this when the video says to do so.]
+# DONE: 11.  [Do this when the video says to do so.]
 #   READ the following statements and PREDICT what they will produce as output.
 #   Then, uncomment them and run the program, checking your predictions
 #   and learning from any predictions that you got wrong
 ###############################################################################
 
-# print()
-# print("_TODO 11:")
-#
-# print("The type of   482      is:", type(482))
-# print("The type of   48.203   is:", type(48.203))
-# print('The type of   "blah blah blah"      is:', type("blah blah blah"))
-# print("The type of   'blah blah blah'      is:", type('blah blah blah'))
-# print("The type of   [4, 2, 9]      is:", type([4, 2, 9]))
-# print("The type of   (4, 2, 9)      is:", type((4, 2, 9)))
-# print("The type of   min     is:", type(min))
-# print("The type of   'min'   is:", type('min'))
-# print("The type of   min(4, 6, 2, 12, 10)    is:", type(min(4, 6, 2, 12, 10)))
-# print("The type of   min(4, 6, 2.0, 12, 10)  is:", type(min(4, 6, 2.0, 12, 10)))
+print()
+print("_TODO 11:")
+
+print("The type of   482      is:", type(482))
+#Guess: int
+print("The type of   48.203   is:", type(48.203))
+#Guess: float
+print('The type of   "blah blah blah"      is:', type("blah blah blah"))
+#Guess: str
+print("The type of   'blah blah blah'      is:", type('blah blah blah'))
+#Guess: str
+print("The type of   [4, 2, 9]      is:", type([4, 2, 9]))
+#Guess: list
+print("The type of   (4, 2, 9)      is:", type((4, 2, 9)))
+#Guess: list
+print("The type of   min     is:", type(min))
+#Guess: module
+print("The type of   'min'   is:", type('min'))
+#Guess: str
+print("The type of   min(4, 6, 2, 12, 10)    is:", type(min(4, 6, 2, 12, 10)))
+#Guess: float
+print("The type of   min(4, 6, 2.0, 12, 10)  is:", type(min(4, 6, 2.0, 12, 10)))
+#Guess: float
 
 
 ###############################################################################
-# TODO: 12.  [Do this when the video says to do so.]
+# DONE: 12.  [Do this when the video says to do so.]
 #   Type an expression that involves addition, subtraction and multiplication
 #   (but NOT division, yet), using whole numbers (which are of type int).
 #   Then run the program, checking that what gets printed is what you expect.
@@ -199,15 +209,17 @@ print("_TODO 10:")
 #  type that results from division, even if both arguments are  int  objects?
 ###############################################################################
 
-# print()
-# print("_TODO 12:")
-# print("4.2 / 2.0 evaluations to:", 4.2 / 2.0)
-# print("4.2 / 2   evaluations to:", 4.2 / 2)
-# print("4 / 2     evaluations to:", 4 / 2)
-# print("3 / 2     evaluations to:", 3 / 2)
+print()
+print("_TODO 12:")
+print(type (2 + (5 * 6) - 7))
+print(type (2 + (5.0 * 6) - 7))
+print("4.2 / 2.0 evaluations to:", 4.2 / 2.0)
+print("4.2 / 2   evaluations to:", 4.2 / 2)
+print("4 / 2     evaluations to:", 4 / 2)
+print("3 / 2     evaluations to:", 3 / 2)
 
 ###############################################################################
-# TODO: 13.  [Do this when the video says to do so.]
+# DONE: 13.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -215,13 +227,17 @@ print("_TODO 10:")
 #  until you understand what those operators do.
 ###############################################################################
 
-# print()
-# print("_TODO 13:")
-# print("17 // 5   evaluations to:", 17 // 5)
-# print("17 % 5    evaluations to:", 17 % 5)
+print()
+print("_TODO 13:")
+print("17 // 5   evaluations to:", 17 // 5)
+print("17 % 5    evaluations to:", 17 % 5)
+print(15 % 3)
+print (81 // 2)
+print (0 // 1)
+print(13 % 5)
 
 ###############################################################################
-# TODO: 14.  [Do this when the video says to do so.]
+# DONE: 14.  [Do this when the video says to do so.]
 #   Uncomment the following and then run the program,
 #   paying close attention to what gets printed.
 #  _
@@ -229,15 +245,15 @@ print("_TODO 10:")
 #  understand what the  +   and   *   operators do when applied to strings.
 ###############################################################################
 
-# print()
-# print("_TODO 14:")
-#
-# print("hello" + "goodbye girl")
-# print("big" * 20)
-# print(("hello " + "goodbye ") * 4)
+print()
+print("_TODO 14:")
+
+print("hello" + "goodbye girl")
+print("big" * 20)
+print(("hello " + "goodbye ") * 4)
 
 ###############################################################################
-# TODO: 15.  [Do this when the video says to do so.]
+# DONE: 15.  [Do this when the video says to do so.]
 #   Type a statement that prints:
 #     I'm not a bug, that's right!
 #   and then run the program, checking that it printed the above sentence
@@ -254,8 +270,11 @@ print("_TODO 10:")
 #   do Part 3 of the Moodle quiz (on Objects, Types, and Values).
 ###############################################################################
 
-# print()
-# print("_TODO 15:")
+print()
+print("_TODO 15:")
+print("I'm not a bug, that's right!")
+print('What does "yarborough" mean?')
+print("I'm on " + '"pins and needles" about ' + "'" + '"' +"'" + '".')
 
 ###############################################################################
 # Part 4: Names, Variables, and Assignment.
