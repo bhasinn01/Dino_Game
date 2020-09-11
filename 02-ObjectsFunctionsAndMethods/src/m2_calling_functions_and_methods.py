@@ -3,12 +3,13 @@ Permits exploration of CALLING FUNCTIONS and CALLING METHODS.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-
+import math
+import random
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Do this module while you watch the Session 2 Preparation video for
 #       m2_calling_functions_and_methods
 #   Do the exercises in this module when the video says to do so.
@@ -22,7 +23,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 ###############################################################################
 
 ###############################################################################
-# TODO: 3.  [Do this when the video says to do so.]
+# DONE: 3.  [Do this when the video says to do so.]
 #   Recall that a FUNCTION gives a NAME to a block of code,
 #   and can have (and usually does have) PARAMETERS that receive values
 #   from actual ARGUMENTS when the method/function is CALLED.
@@ -43,18 +44,23 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #   After you do the last of the above, hover over the function name  lgamma
 #   to see its Quick Documentation.
 ###############################################################################
+print(math.cos(2.5))
+print(math.degrees(-0.5))
+print(math.log(math.e,2))
+print(math.factorial(100))
+print(math.lgamma(3.1))
 
 ###############################################################################
-# TODO: 4.  [Do this when the video says to do so.]
+# DONE: 4.  [Do this when the video says to do so.]
 #   Type the statements needed to print a random integer between 100 and 1000,
 #   using the   random.randint   function to do so.
 #   Run the program to test your statements.
 #  _
 #   After doing so, bring up the Quick Documentation for random.randint.
 ###############################################################################
-
+print(random.randint(100, 1000))
 ###############################################################################
-# TODO: 5.  [Do this when the video says to do so.]
+# DONE: 5.  [Do this when the video says to do so.]
 #   Below this _TODO, put statements that call functions defined
 #   in the   builtins   module to do each of the following,
 #   running the program after typing each, to test your statements one by one:
@@ -63,9 +69,10 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #   The result will be different each time you run the program,
 #   because of the randomness.
 ###############################################################################
-
+print(abs(random.randint(-100,1000)))
+print(min(random.randint(1,20), random.randint(1,20), random.randint(1,20), random.randint(1,20)))
 ###############################################################################
-# TODO: 6.  [Do this when the video says to do so.]
+# DONE: 6.  [Do this when the video says to do so.]
 #   The code below defines a function that returns the temperature
 #   in Celsius of a given temperature in Fahrenheit.
 #   BELOW that function definition, write code that prints:
@@ -82,6 +89,8 @@ def get_celsius(temperature_in_fahrenheit):
     """
     return (temperature_in_fahrenheit - 32) * (5 / 9)
 
+print(get_celsius(1000))
+print(get_celsius(-80))
 ###############################################################################
 # Part 2: Calling METHODS.
 ###############################################################################
