@@ -8,6 +8,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 
 import math
 import random
+import rosegraphics as rg
 ###############################################################################
 # DONE: 2.
 #   Do this module while you watch the Session 2 Preparation video for
@@ -121,3 +122,8 @@ print(get_celsius(-80))
 #   After you do the last of the above, hover over the
 #   method name   get_next_mouse_click   to see its Quick Documentation.
 ###############################################################################
+window = rg.RoseWindow()
+print(window.get_next_mouse_click())
+for k in range (5):
+    print(window.get_next_mouse_click())
+window.close_on_mouse_click()
