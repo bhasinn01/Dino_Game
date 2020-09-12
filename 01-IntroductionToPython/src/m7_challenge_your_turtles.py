@@ -3,10 +3,10 @@ Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
+         Neha Bhasin.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 6 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
 
@@ -29,3 +29,31 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #  _
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+import rosegraphics as rg
+window = rg.TurtleWindow()
+
+cass = rg.SimpleTurtle("circle")
+cass.pen = rg.Pen("purple", 5)
+cass.speed = 20
+size = 300
+for k in range(6):
+    cass.draw_circle(100)
+    cass.pen_up()
+    cass.right(45)
+    cass.forward(10)
+    cass.left(45)
+    cass.pen_down()
+    size = size - 10
+
+window.tracer(20)
+
+sierra = rg.SimpleTurtle("square")
+sierra.pen = rg.Pen("blue", 3)
+sierra.backward(50)
+
+for k in range(200):
+    sierra.draw_square(100)
+    sierra.left(91)
+    sierra.forward(k)
+
+window.close_on_mouse_click()
