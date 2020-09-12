@@ -4,11 +4,11 @@ Practice DEFINING and CALLING
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -18,7 +18,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 ###############################################################################
 
 import rosegraphics as rg
-
+import math
 
 def main():
     """
@@ -27,12 +27,16 @@ def main():
     """
     window = rg.TurtleWindow()
     # Put your TESTS immediately below this line, as directed by _TODO_s below.
+    print(find_hypotenuse(1, 1))
+    print(find_hypotenuse(6,8))
 
+    drawing_turtles("blue", 10)
+    drawing_turtles("purple", 30)
     window.close_on_mouse_click()
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -41,14 +45,15 @@ def main():
 #   You may name the function and its parameters whatever you wish,
 #   but choose DESCRIPTIVE (self-documenting) names.
 #
-# TODO: 3b.  In main, CALL your function TWICE (with different values
+# DONE: 3b.  In main, CALL your function TWICE (with different values
 #   for the arguments) and print the returned values,
 #   to test whether you defined the function correctly.
 ###############################################################################
-
-
+def find_hypotenuse(side_a,side_b):
+     sum_a_b = (((side_a) ** 2) + ((side_b) ** 2))
+     return math.sqrt(sum_a_b)
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. "red")
 #     -- a positive integer that represents the thickness of a Pen.
@@ -69,12 +74,18 @@ def main():
 #   You may name the function and its parameters whatever you wish,
 #   but choose DESCRIPTIVE (self-documenting) names.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 ###############################################################################
-
+def drawing_turtles(color , thickness):
+    Cass = rg.SimpleTurtle("turtle")
+    turtle1 = rg.SimpleTurtle("turtle")
+    Cass.pen = rg.Pen("green", thickness)
+    turtle1.pen = rg.Pen(color,5)
+    Cass.forward(100)
+    turtle1.backward(100)
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   COMMIT-and-PUSH your work (after changing this _TODO_ to DONE).
 #  _
 #   As a reminder, here is how you should do so:
