@@ -3,15 +3,17 @@ An exercise that summarizes what you have learned in this Session.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
+         Neha Bhasin.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 6 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
-
+import rosegraphics as rg
+window = rg.TurtleWindow()
+window.delay(20)
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Write code that accomplishes the following (and ONLY the following),
 #   in the order listed:
 #  _
@@ -38,3 +40,14 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #   As always, test by running the module.
 #   As always, COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+cass = rg.SimpleTurtle("turtle")
+cass.pen = rg.Pen("blue",5)
+cass.left(90)
+cass.forward(200)
+cass.pen_up()
+cass.go_to(rg.Point(100, -40))
+cass.pen_down()
+cass.pen = rg.Pen("green",10)
+cass.backward(150)
+
+window.close_on_mouse_click()
