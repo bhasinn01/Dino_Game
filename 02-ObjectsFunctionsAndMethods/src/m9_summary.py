@@ -3,10 +3,10 @@ An exercise that summarizes what you have learned in this Session.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
+         Neha Bhasin.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
 
@@ -29,3 +29,18 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #           - Move forward twice the given distance.
 #     d.  Calls main.
 ###############################################################################
+import rosegraphics as rg
+def main():
+    window = rg.TurtleWindow()
+    creating_turtle("turtle", "blue", 100)
+    creating_turtle("square", "red", 50)
+    window.close_on_mouse_click()
+
+def creating_turtle(turtle, color, distance):
+    created = rg.SimpleTurtle(turtle)
+    created.backward(distance)
+    created.pen = rg.Pen(color, 5)
+    created.left(90)
+    created.forward(distance * 2)
+
+main()
