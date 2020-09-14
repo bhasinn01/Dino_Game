@@ -11,7 +11,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 ###############################################################################
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Define a complete program that:
 #     a.  Imports  rosegraphics
 #     b.  Defines a   main   function that:
