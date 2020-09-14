@@ -4,8 +4,8 @@ and using the DOT trick to discover them.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -55,7 +55,7 @@ def strings_1(string):
       :type string: str
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function, per its doc-string above.
+    # DONE: 2. Implement and test this function, per its doc-string above.
     #   Use the appropriate   string   methods to implement the function.
     #   Tests are already written for you in  main  above.
     #  _
@@ -63,7 +63,7 @@ def strings_1(string):
     #      "".
     #   (note the dot!) and use the so-called DOT TRICK, seeing what you find.
     ###########################################################################
-
+    print(string.lower().replace("e", "Z"))
 
 def strings_2(string):
     """
@@ -79,7 +79,7 @@ def strings_2(string):
       :type string: str
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function, per its doc-string above.
+    # DONE: 3. Implement and test this function, per its doc-string above.
     #   Use the appropriate   string   methods to implement the function.
     #   Tests are already written for you in  main  above.
     #  _
@@ -87,7 +87,7 @@ def strings_2(string):
     #      "".
     #   (note the dot!) and use the so-called DOT TRICK, seeing what you find.
     ###########################################################################
-
+    print(string.replace("xxx", "Siri").title())
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
