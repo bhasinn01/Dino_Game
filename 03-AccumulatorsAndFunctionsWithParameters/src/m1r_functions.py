@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO:
+# DONE:
 #   1. READ the code below.
 #   2. TRACE (by hand) the execution of the code,
 #        predicting what will get printed.
@@ -40,3 +40,12 @@ def hello_and_goodbye(person1, person2):
 
 
 main()
+
+# Hello, Grace Hopper - how are things?
+# Goodbye, Ada Lovelace - see you later!
+# Hello, Mataric - how are things?
+# Hello, Rus - how are things?
+# Hello, Two - how are things?
+# Goodbye, One - see you later!
+# Hello, One - how are things?
+# Goodbye, Two - see you later!
