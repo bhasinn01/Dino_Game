@@ -5,11 +5,11 @@ in its simplest classic forms:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2. Read the following, then change its _TODO_ to DONE.
+# DONE: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
@@ -18,7 +18,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #   but you are NOT permitted to use the MULTIPLE-ARGUMENT form yet,
 #   for pedagogical reasons.
 ###############################################################################
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -29,7 +29,7 @@ def main():
 def run_test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function.
+    # DO: 3. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #  ___
@@ -41,6 +41,20 @@ def run_test_sum_cosines():
     print("Testing the   sum_cosines   function:")
     print("--------------------------------------------------")
 
+    expected = 0.13416
+    answer = sum_cosines(3)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 1.00000
+    answer = sum_cosines(0)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 1.54030
+    answer = sum_cosines(1)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
 
 def sum_cosines(n):
     """
@@ -56,19 +70,22 @@ def sum_cosines(n):
       :rtype: float
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-FIRST DEVELOPMENT (TFD).
     #  ___
     #  No fair running the code of  sum_cosines  to GENERATE
     #  test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
-
+    num = 0
+    for k in range(n+1):
+       num = math.cos(k) + num
+    return num
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # DONE: 5. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #  ___
@@ -80,6 +97,20 @@ def run_test_sum_square_roots():
     print("Testing the   sum_square_roots   function:")
     print("--------------------------------------------------")
 
+    expected = 11.854408
+    answer = sum_square_roots(5)
+    print("Test 1 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 1.41421356
+    answer = sum_square_roots(1)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 5.86370331
+    answer = sum_square_roots(3)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
 
 def sum_square_roots(n):
     """
@@ -98,14 +129,17 @@ def sum_square_roots(n):
       :rtype: float
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-FIRST DEVELOPMENT (TFD).
     #  ___
     #  No fair running the code of  sum_square_roots  to GENERATE
     #  test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
-
+    num = 0
+    for k in range(n+1):
+        num = math.sqrt(k*2) + num
+    return num
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
