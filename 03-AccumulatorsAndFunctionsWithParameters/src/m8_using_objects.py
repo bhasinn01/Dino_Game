@@ -6,8 +6,8 @@ This module lets you practice  ** using objects **, including:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -15,8 +15,9 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
-
+    two_circles()
+    lines()
+    circle_and_rectangle()
 def two_circles():
     """
     -- Constructs an rg.RoseWindow.
@@ -28,14 +29,24 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its green doc-string above.
+    # DONE: 2. Implement this function, per its green doc-string above.
     #     -- ANY two rg.Circle objects that meet the criteria are fine.
     #     -- File  COLORS.txt  lists all legal color-names.
     #   Put a statement in   main   to test this function
     #    (by calling this function).
     #   HINT: Module  m2r_using_rosegraphics  has helpful examples for this.
     # -------------------------------------------------------------------------
+    window = rg.RoseWindow()
 
+    circle = rg.Circle(rg.Point(100,150),10)
+    circle.fill_color = "gold"
+    circle.attach_to(window)
+
+    circle2 = rg.Circle(rg.Point(250, 150), 100)
+    circle2.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
 
 def lines():
     """
@@ -60,7 +71,7 @@ def lines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #    -- ANY lines that meet the criteria are fine.
     #  Put a statement in   main   to test this function
     #    (by calling this function).
@@ -69,7 +80,22 @@ def lines():
     #  IMPORTANT: Use the DOT TRICK to guess the name of the relevant method
     #    and instance variables.
     # -------------------------------------------------------------------------
+    window = rg.RoseWindow()
 
+    line = rg.Line(rg.Point(200, 100), rg.Point(221, 200))
+    line.attach_to(window)
+
+    thick_line = rg.Line(rg.Point(100, 100), rg.Point(121, 200))
+    thick_line.thickness = 10
+    thick_line.attach_to(window)
+    print(thick_line.get_midpoint())
+    x = (thick_line.start.x + thick_line.end.x)/2
+    y = (thick_line.start.y + thick_line.end.y)/2
+    print(x)
+    print(y)
+
+    window.render()
+    window.close_on_mouse_click()
 
 def circle_and_rectangle():
     """
@@ -104,7 +130,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its green doc-string above.
+    # DONE: 4. Implement this function, per its green doc-string above.
     #    -- ANY objects that meet the criteria are fine.
     #  Put a statement in   main   to test this function
     #    (by calling this function).
@@ -113,7 +139,34 @@ def circle_and_rectangle():
     #  IMPORTANT: Use the DOT TRICK to guess the names of the relevant
     #       instance variables for outline thickness, etc.
     # -------------------------------------------------------------------------
+    window = rg.RoseWindow()
 
+    x = 180
+    y = 115
+    circle = rg.Circle(rg.Point(x, y), 50)
+    circle.fill_color = "blue"
+    circle.outline_thickness = 1
+    circle.attach_to(window)
+    print(circle.outline_thickness)
+    print(circle.fill_color)
+    print(circle.center)
+    print(x)
+    print(y)
+
+
+    rect = rg.Rectangle(rg.Point(50, 200), rg.Point(100, 100))
+    rect.outline_thickness = 1
+    rect.attach_to(window)
+    rex = (rect.corner_1.x + rect.corner_2.x) / 2
+    rey = (rect.corner_1.y + rect.corner_2.y) / 2
+    print(rect.outline_thickness)
+    print(rect.fill_color)
+    print(rect.get_center())
+    print(rex)
+    print(rey)
+
+    window.render()
+    window.close_on_mouse_click()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
