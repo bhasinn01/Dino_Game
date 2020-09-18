@@ -9,9 +9,9 @@ in another classic form:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
 # -----------------------------------------------------------------------------
 # Students: As you work each of these problems, ask yourself:
 #   1. Do I need a loop?
@@ -24,7 +24,7 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 # -----------------------------------------------------------------------------
 
 ##############################################################################
-# TODO: 2. Read the following, then change its _TODO_ to DONE.
+# DONE: 2. Read the following, then change its _TODO_ to DONE.
 #   Throughout these exercises, you must use  RANGE  statements.
 #   At this point of the course, you are restricted to the SINGLE-ARGUMENT
 #   form of RANGE statements, like this:
@@ -84,6 +84,22 @@ def run_test_sum_more_cosines():
     #   Below this comment, add 2 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
+    expected = 1.5403  # This is APPROXIMATELY the correct answer.
+    answer = sum_more_cosines(0, 1)
+    print("Test 2 expected:", expected, "(approximately)")
+    if answer is not None:
+        print("       actual:  ", round(answer, 5))
+    else:
+        print("       actual:  ", answer)
+
+    expected = 1.12416  # This is APPROXIMATELY the correct answer.
+    answer = sum_more_cosines(1, 3)
+    print("Test 3 expected:", expected, "(approximately)")
+    if answer is not None:
+        print("       actual:  ", round(answer, 5))
+    else:
+        print("       actual:  ", answer)
+
 
 def sum_more_cosines(m, n):
     """
@@ -115,7 +131,10 @@ def sum_more_cosines(m, n):
     #    Just   range(blah)   where blah is a single variable.
     #    Reason: To ensure that you get more practice using expressions.
     # -------------------------------------------------------------------------
-
+    num = 0
+    for k in range((n+1) - m):
+        num = math.cos(k) + num
+    return num
 
 def run_test_count_sines_from():
     """ Tests the   count_sines_from   function. """
@@ -143,6 +162,30 @@ def run_test_count_sines_from():
     #   Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
+    expected = 3
+    answer = count_sines_from(4, 6)
+    print("Test 2 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 5
+    answer = count_sines_from(3, 9)
+    print("Test 3 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 0
+    answer = count_sines_from(7, 7)
+    print("Test 4 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 1
+    answer = count_sines_from(9, 9)
+    print("Test 5 expected:", expected)
+    print("       actual:  ", answer)
+
+    expected = 5
+    answer = count_sines_from(3, 9)
+    print("Test 6 expected:", expected)
+    print("       actual:  ", answer)
 
 def count_sines_from(m, n):
     """
@@ -175,7 +218,12 @@ def count_sines_from(m, n):
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range((n + 1) - m):
+        if math.sin(k) < 0.5:
+            print(k)
+            count = count + 1
+    return count
 
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
