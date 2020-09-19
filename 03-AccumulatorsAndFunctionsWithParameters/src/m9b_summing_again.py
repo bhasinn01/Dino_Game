@@ -140,7 +140,7 @@ def sum_powers_in_range(m, n, p):
     #  test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
     num = 0
-    for k in range(n - (m - 1)):
+    for k in range(n - m + 1):
         num = num + ((k + m) ** p)
     return num
 

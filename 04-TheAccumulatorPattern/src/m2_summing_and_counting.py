@@ -221,7 +221,6 @@ def count_sines_from(m, n):
     count = 0
     for k in range((n + 1) - m):
         if math.sin(k) < 0.5:
-            print(k)
             count = count + 1
     return count
 
@@ -288,6 +287,12 @@ def count_sines_vs_cosines(m):
     #    you must NOT use the 2 or 3-parameter versions
     #    of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
+    count = 0
+    for k in range(m - (- m)):
+        if math.sin(k) > math.cos(k):
+            count = count + 1
+    return count
+
 
 
 # -----------------------------------------------------------------------------
