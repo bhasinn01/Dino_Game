@@ -3,8 +3,8 @@ Exam 1, problem 2.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 
@@ -214,7 +214,10 @@ def problem2a(m, n, r):
     #     less than full credit, even if you solve the rest of the problem.
     #     Your score on this problem will not be less than 0, no matter what.
     ###########################################################################
-
+    total = 0
+    for k in range (n - m + 1):
+        total = total + ((k + 1) * ((m + k) ** r))
+    return total
 
 def run_test_problem2b():
     """ Tests the   problem2b   function. """
@@ -427,7 +430,10 @@ def problem2b(a, b):
     #    **  For full credit you must appropriately use (call)
     #    **  the   appropriate   functions that are DEFINED ABOVE.
     ###########################################################################
-
+    total = 0
+    for k in range (a + 1):
+        total = total + (k * (k ** b))
+    return total
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
