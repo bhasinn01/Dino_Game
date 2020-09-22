@@ -3,8 +3,8 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 
@@ -18,13 +18,13 @@ def main():
 
 
 ###############################################################################
-# TODO: 2. Right-click on the  src  folder and
+# DONE: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 ###############################################################################
 
 ###############################################################################
-# TODO: 3.  READ the green doc-strings for the:
+# DONE: 3.  READ the green doc-strings for the:
 #     - greatest_common_divisor
 #   function defined below.  You do NOT need to understand its implementation,
 #   just its specifications (per the doc-strings).  You should  ** CALL **
@@ -159,13 +159,16 @@ def problem1a(a, b):
         ** IF YOU DO NOT UNDERSTAND THE ABOVE SPECIFICATION. **
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #   IMPORTANT:
     #    **  For full credit you must appropriately use (call)
     #    **  the   appropriate   function(s) that are DEFINED ABOVE.
     ###########################################################################
-
+    if greatest_common_divisor(a, b) == 1:
+        return True
+    else:
+        return False
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
@@ -333,7 +336,10 @@ def problem1b(r, s, t):
     #    **  For full credit you must appropriately use (call)
     #    **  the   appropriate   function(s) that are DEFINED ABOVE.
     ###########################################################################
-
+    count = 0
+    for k in range(t - s + 1):
+        count = count + (greatest_common_divisor(r, (s + k)) == 1)
+    return count
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
