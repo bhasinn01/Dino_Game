@@ -206,7 +206,7 @@ def problem2a(m, n, r):
       -- ASK FOR HELP if you do not understand the above examples.
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #   IMPORTANT: If you cannot determine the right value for X
     #     in the above specification, you may ask us to tell it to you,
@@ -424,7 +424,7 @@ def problem2b(a, b):
     -- ASK FOR HELP if you do not understand the above examples.
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #   IMPORTANT:
     #    **  For full credit you must appropriately use (call)

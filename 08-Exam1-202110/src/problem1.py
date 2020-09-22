@@ -330,7 +330,7 @@ def problem1b(r, s, t):
       *** Ask for help if you do not understand the above examples. ***
      """
     ###########################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #   IMPORTANT:
     #    **  For full credit you must appropriately use (call)
