@@ -125,6 +125,8 @@ def problem3(rectangle, circle, color, window):
     center = rectangle.get_center()
     width = circle.radius * 2
     square = rg.Square(center, width)
+    square.outline_color = "red"
+    square.outline_thickness = 3
     square.attach_to(window)
     window.render()
 
