@@ -3,8 +3,8 @@ Exam 1, problem 4.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -122,7 +122,37 @@ def problem4(number_of_rectangles, x1, y1, x2, y2, color1, color2,
     #     Step 5: Get the fill colors of the rg.Rectangles to alternate
     #               between color1 and color2.
     # -------------------------------------------------------------------------
+    rect = rg.Rectangle(rg.Point(x1,y1) , rg.Point(x2, y2))
+    rect.fill_color = color1
+    rect.outline_thickness = 5
+    rect.attach_to(window)
+    height = rect.get_height()
+    center = rect.get_center()
+    ny = y2
+    ny2 = y2 + y2
+    cy = center.y - (height / 2)
+    circle = rg.Circle(rg.Point(x1, cy), height/2)
+    circle.fill_color = color3
+    circle.outline_thickness = 3
+    circle.attach_to(window)
+    for k in range (number_of_rectangles):
+        new_rect = rg.Rectangle(rg.Point(x1,ny), rg.Point(x2, ny2))
+        new_rect.outline_thickness = 5
+        if k % 2 == 1:
+            new_rect.fill_color = color1
+        else:
+            new_rect.fill_color = color2
+        new_rect.attach_to(window)
+        ny = ny + y2
+        ny2 = ny2 + y2
+        center2 = new_rect.get_center()
+        ncy = center2.y - (height / 2)
+        circle2 = rg.Circle(rg.Point(x1, ncy), height/2)
+        circle2.fill_color = color3
+        circle2.outline_thickness = 3
+        circle2.attach_to(window)
 
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
