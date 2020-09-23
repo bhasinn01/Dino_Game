@@ -52,15 +52,15 @@ def test_factor_sum():
     print('Actual:  ', actual)
 
     # Test 2:
-    expected = 25
-    actual = factor_sum(4)
+    expected = 4
+    actual = factor_sum(25)
     print("Test 2")
     print('Expected:', expected)
     print('Actual:  ', actual)
 
     # Test 3:
-    expected = 2
-    actual = factor_sum(3)
+    expected = 3
+    actual = factor_sum(2)
     print("Test 3")
     print('Expected:', expected)
     print('Actual:  ', actual)
