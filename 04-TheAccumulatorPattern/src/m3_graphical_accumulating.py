@@ -183,7 +183,7 @@ def draw_lines(n, point, window):
       :rtype: None
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #  _
     #  CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -195,11 +195,13 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     #  ########################################################################
     # -------------------------------------------------------------------------
-    pX = point.x + 100
+    z = (100 - - 100)/(n-1)
     pY = point.y
-    for k in range(n + 1):
-        lines = rg.Line(point, rg.Point(pX, pY))
-        lines.attach_to(window)
+    for k in range(n):
+        p1 = rg.Point(point.x, pY)
+        p2 = rg.Point(point.x + 100, pY - 100 + z*k)
+        line = rg.Line(p1, p2)
+        line.attach_to(window)
     window.render()
 
 # -----------------------------------------------------------------------------
