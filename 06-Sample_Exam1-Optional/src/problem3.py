@@ -202,8 +202,11 @@ def problem3a(r, s):
     #    **  use (call) the   sum_of_digits   function
     #    **  that is DEFINED ABOVE.
     ###########################################################################
-
-
+    sum = 0
+    for k in range(s - r + 1):
+        if sum_of_digits((r + k) ** 3) % 2 == 1:
+            sum = sum + (r + k)
+    return(sum)
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
     print()
@@ -313,7 +316,10 @@ def problem3b(m, r):
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
-
+    series = 0
+    for k in range(m + 1):
+        series = series + k / ((r + (k-1))**(k))
+    return series
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
