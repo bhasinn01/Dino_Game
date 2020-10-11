@@ -111,7 +111,6 @@ def run_test_move_by():
         window.render(0.05)
     window.close_on_mouse_click()
 
-
 def run_test_clone():
     """
     Tests for the   clone   method.
