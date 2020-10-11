@@ -11,8 +11,8 @@ It also demonstrates the distinction between:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 import testing_helper
@@ -22,12 +22,12 @@ import time
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_summary1a()
-    run_test_summary1c()
+    run_test_summary1b()
     run_test_summary1c()
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #     - is_prime
 #   function defined below.  You do NOT need to understand its
 #   implementation, just its specification (per the doc-string).
@@ -174,9 +174,13 @@ def summary1a(sequence):
          are the 4 primes in the sequence.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]) == True:
+            count = count + 1
+    return count
 
 def run_test_summary1b():
     """ Tests the   summary1b   function. """
@@ -291,9 +295,13 @@ def summary1b(seq):
          are 23, 29, 29, and 2, and 23 + 29 + 29 + 2 = 83.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # -------------------------------------------------------------------------
-
+    sum = 0
+    for k in range(len(seq)):
+        if is_prime(seq[k]) == True:
+            sum = sum + seq[k]
+    return sum
 
 def run_test_summary1c():
     """ Tests the   summary1c   function. """
@@ -419,7 +427,11 @@ def summary1c(sequence):
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     # -------------------------------------------------------------------------
-
+    sum = 0
+    for k in range(len(sequence)):
+        if is_prime(sequence[k]) == True:
+            sum = sum + k
+    return sum
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
