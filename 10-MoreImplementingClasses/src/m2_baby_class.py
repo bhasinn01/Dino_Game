@@ -3,8 +3,8 @@ A   Baby   class and functions that use/test it.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 
@@ -13,12 +13,12 @@ def main():
     """ Runs the tests of the   Baby   class. """
     print("UN-comment the following TESTS, one by one, when you are ready.")
     # UN-comment the following, one by one, when you are ready to TEST.
-    # run_test_1()
-    # run_test_2()
+    run_test_1()
+    run_test_2()
 
 
 ###############################################################################
-# TODO: 2.  In this module you will implement and test a   Baby  class.
+# DONE: 2.  In this module you will implement and test a   Baby  class.
 #           Here is an OVERVIEW of the steps you will take to do so.
 #  _
 #    Step 2 (this step): Read this overview of this module.
@@ -31,7 +31,7 @@ def main():
 ###############################################################################
 
 ###############################################################################
-# TODO: 3. SPECIFICATION (read the following):
+# DONE: 3. SPECIFICATION (read the following):
 #   Here (below) are the methods that you must implement in your Baby class:
 #  ----------------------------------------------------------------------------
 #  _
@@ -92,7 +92,7 @@ def main():
 ###############################################################################
 
 ###############################################################################
-# TODO: 4. TESTS (read the following):
+# DONE: 4. TESTS (read the following):
 #  The two functions that follow this comment TEST the Baby class.
 #  For each of those two functions:
 #    1. READ the CODE in the function.
@@ -227,7 +227,7 @@ def run_test_2():
 
 
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   Implement the entire   Baby  class
 #     (including its 3 methods: __init__, feed_baby, and hour_passes)
 #     below this comment.
@@ -243,7 +243,25 @@ def run_test_2():
 #  _
 #      Fix errors as needed!  Do not hesitate to ASK QUESTIONS AS NEEDED.
 ###############################################################################
+class Baby(object):
+    def __init__(self, name):
+        self.name = name
+        print('Hello baby {}!'.format(self.name))
+        self.hours = 0
 
+    def feed_baby(self):
+        print('Thank you for feeding baby {}.'.format(self.name))
+        self.hours = 0
+
+
+    def hour_passes(self):
+        self.hours = self.hours + 1
+        if self.hours == 1:
+            print('Baby {} is sleeping.'.format(self.name))
+        elif self.hours == 2:
+            print('Baby {} is awake.  Time for food.'.format(self.name))
+        else:
+            print('Baby {} is CRYING uncontrollably!  Feed the Baby!'.format(self.name))
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
