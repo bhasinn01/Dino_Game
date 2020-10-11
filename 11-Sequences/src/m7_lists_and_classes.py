@@ -16,7 +16,7 @@ import testing_helper
 
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Watch the VIDEO for this module listed in the Follow-Me section
+# DONE: 2. Watch the VIDEO for this module listed in the Follow-Me section
 #  of the Preparation for this session.  It introduces the ConceptMap class
 #  that you will implement in this module.
 #    After you have watched that video, mark this _TODO_ as DONE.
@@ -97,10 +97,15 @@ class ConceptMap:
                returns  11 + 14 + 10 + 30 + 50, which is 115.
         """
         # ---------------------------------------------------------------------
-        # TODO: 3. Follow along with the video to implement and test this
+        # DONE: 3. Follow along with the video to implement and test this
         #   method.  Tests have been written for you (below) and include
         #   the example in the above doc-string.
         # ---------------------------------------------------------------------
+        total = 0
+        for k in range(len(self.circles)):
+            x = self.circles[k].center.x
+            total = total + x
+        return total
 
     def number_of_small_circles(self, threshold):
         """
@@ -121,9 +126,15 @@ class ConceptMap:
             concept_map1.number_of_small_circles(4)   returns  0
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this method.  Tests have been written
+        # DONE: 4. Implement and test this method.  Tests have been written
         #   for you (below) and include the example in the above doc-string.
         # ---------------------------------------------------------------------
+        total = 0
+        for k in range(len(self.circles)):
+            r = self.circles[k].radius
+            if r < threshold:
+                total = total + 1
+        return total
 
     def product_of_sums_of_x_and_y_coordinates(self):
         """
@@ -147,9 +158,15 @@ class ConceptMap:
                which is 71259750.
         """
         # ---------------------------------------------------------------------
-        # TODO: 5. Implement and test this method.  Tests have been written
+        # DONE: 5. Implement and test this method.  Tests have been written
         #   for you (below) and include the example in the above doc-string.
         # ---------------------------------------------------------------------
+        product = 1
+        for k in range(len(self.circles)):
+            x = self.circles[k].center.x
+            y = self.circles[k].center.y
+            product = product * (x + y)
+        return product
 
     def sum_of_some_indices(self):
         """
@@ -168,10 +185,17 @@ class ConceptMap:
                returns  1 + 3 + 4,   which is 8
         """
         # ---------------------------------------------------------------------
-        # TODO: 6. Follow along with the video to implement and test this
+        # DONE: 6. Follow along with the video to implement and test this
         #   method.  Tests have been written for you (below) and include
         #   the example in the above doc-string.
         # ---------------------------------------------------------------------
+        total = 0
+        for k in range(len(self.circles)):
+            x = self.circles[k].center.x
+            y = self.circles[k].center.y
+            if x > y:
+                total = total + k
+        return total
 
     def product_of_some_radii(self):
         """
@@ -190,9 +214,15 @@ class ConceptMap:
                returns  8 * 12, which is 96
         """
         # ---------------------------------------------------------------------
-        # TODO: 7. Implement and test this method.  Tests have been written
+        # DONE: 7. Implement and test this method.  Tests have been written
         #   for you (below) and include the example in the above doc-string.
         # ---------------------------------------------------------------------
+        total = 1
+        for k in range(len(self.circles)):
+            r = self.circles[k].radius
+            if k % 2 == 1:
+                total = total * r
+        return total
 
     def sum_of_distances(self, point):
         """
@@ -220,10 +250,14 @@ class ConceptMap:
               [ 3  +  1  +  8.94  +  16.28  +  42.72], which is about 71.943111.
         """
         # ---------------------------------------------------------------------
-        # TODO: 8. Implement and test this method.  Tests have been written
+        # DONE: 8. Implement and test this method.  Tests have been written
         #   for you (below) and include the example in the above doc-string.
         # ---------------------------------------------------------------------
-
+        total = 0
+        for k in range(len(self.circles)):
+            dis = self.circles[k].center.distance_from(point)
+            total = total + dis
+        return total
 
 ###############################################################################
 # Code for TESTING is below here.
