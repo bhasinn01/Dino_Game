@@ -10,7 +10,6 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 
 import rosegraphics as rg
 
-
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_count_negatives()
