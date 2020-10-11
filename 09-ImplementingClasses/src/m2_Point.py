@@ -99,6 +99,7 @@ class Point(object):
         x_cor = (self.x + p.x) / 2
         y_cor = (self.y + p.y) / 2
         return Point(x_cor, y_cor)
+
 ###############################################################################
 # NOTE: For ALL of the methods that you implement, the method is allowed
 # to have additional side effects as needed by it and/or other methods.
