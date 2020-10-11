@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -108,14 +108,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      3
     #    TIME ESTIMATE:   5 minutes.
     # -------------------------------------------------------------------------
-
+    seq_new = sequence
+    for k in range(len(sequence)):
+        seq_new[k] = sequence[k]+delta
+    return seq_new
 
 def run_test_practice_problem2c():
     """ Tests the   practice_problem2c  function. """
@@ -216,14 +219,21 @@ def practice_problem2c(sequence):
       :type sequence: [str]
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
-
+    ret_string = ""
+    for k in range(len(sequence)):
+        string = sequence[k]
+        if len(string) == 0:
+            ret_string = ret_string + string
+        else:
+            ret_string = ret_string + string[0]
+    return ret_string
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
