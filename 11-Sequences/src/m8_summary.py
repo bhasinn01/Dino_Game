@@ -425,7 +425,7 @@ def summary1c(sequence):
          are at INDICES 1, 2, 5 and 7, and 1 + 2 + 5 + 7 = 15.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     # -------------------------------------------------------------------------
     sum = 0
     for k in range(len(sequence)):
