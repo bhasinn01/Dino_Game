@@ -6,7 +6,7 @@ one item at a time, using the ACCUMULATOR pattern.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
+         Neha Bhasin.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
@@ -23,8 +23,8 @@ def main():
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to _TODO_ 9 and _TODO_ 10.
     # -------------------------------------------------------------------------
-    # run_test_draw_shapes()
-    # run_test_rectangles_from_circles()
+    run_test_draw_shapes()
+    run_test_rectangles_from_circles()
 
 
 def run_test_make_simple_list():
@@ -51,6 +51,10 @@ def run_test_make_simple_list():
     # TODO: 2 (continued)
     #  Test 2:  (YOU write THIS test)
     # -------------------------------------------------------------------------
+    expected = [205]
+    actual = make_simple_list(205, 205)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_simple_list(m, n):
@@ -75,7 +79,10 @@ def make_simple_list(m, n):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    list = []
+    for k in range(n - m + 1):
+        list = list + [m + k]
+    return list
 
 def run_test_make_simple_string():
     """ Tests the   make_simple_string    function. """
@@ -91,6 +98,17 @@ def run_test_make_simple_string():
     print("Testing the   make_simple_string   function:")
     print("--------------------------------------------------")
 
+    # Test 1:
+    expected = '5-6-7-8-9-10-11-12-13'
+    actual = make_less_simple_string(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    expected = '205'
+    actual = make_less_simple_string(205, 205)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 def make_simple_string(m, n):
     """
@@ -116,7 +134,11 @@ def make_simple_string(m, n):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    string = ''
+    for k in range(n - m + 1):
+        num = m + k
+        string = string + str(num) + '-'
+    return string
 
 def run_test_make_less_simple_string():
     """ Tests the   make_less_simple_string    function. """
@@ -131,6 +153,18 @@ def run_test_make_less_simple_string():
     print("--------------------------------------------------")
     print("Testing the   make_less_simple_string   function:")
     print("--------------------------------------------------")
+
+    # Test 1:
+    expected = '5-6-7-8-9-10-11-12-13'
+    actual = make_less_simple_string(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    expected = '205'
+    actual = make_less_simple_string(205, 205)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_less_simple_string(m, n):
@@ -160,6 +194,12 @@ def make_less_simple_string(m, n):
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
+    string = str(m)
+    p = m + 1
+    for k in range(n - p + 1):
+        num = p + k
+        string = string + '-' + str(num)
+    return string
 
 def run_test_draw_shapes():
     """ Tests the   draw_shapes    function. """
@@ -250,7 +290,10 @@ def draw_shapes(shapes, window):
     #  FWIW: The word for ideas like this is "polymorphism".
     #  ########################################################################
     # -------------------------------------------------------------------------
-
+    for k in range(len(shapes)):
+        shape = shapes[k]
+        shape.attach_to(window)
+        window.render(0.3)
 
 def run_test_rectangles_from_circles():
     """ Tests the   rectangles_from_circles    function. """
@@ -361,7 +404,15 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     #  ########################################################################
     # -------------------------------------------------------------------------
-
+    rectangles = []
+    for k in range(len(circles)):
+        radius = circles[k].radius
+        center = circles[k].center
+        corner1 = rg.Point(center.x - radius, center.y - radius)
+        corner2 = rg.Point(center.x + radius, center.y + radius)
+        rectangle = rg.Rectangle(corner1, corner2)
+        rectangles = rectangles + [rectangle]
+    return rectangles
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.

@@ -8,8 +8,8 @@ for ITERATING through SEQUENCES, including:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -112,7 +112,12 @@ def sum_radii(circles):
     #  ___
     #  Instead, use explicit loops, as you have for other problems.
     # -------------------------------------------------------------------------
-
+    sum = circles[0].radius
+    sum_list = str(circles[0].radius)
+    for k in range(len(circles) - 1):
+        sum = sum + circles[k + 1].radius
+        sum_list = sum_list + '+' + str(circles[k + 1].radius)
+    return sum_list + ', which is ' + str(sum)
 
 ###############################################################################
 # Some problems iterate (loop) through PART of the sequence,
@@ -232,7 +237,12 @@ def count_last_n_odds(integers, n):
     #     The testing code is already written for you (above).
     #     If you have questions about the testing code, ask for help.
     # -------------------------------------------------------------------------
-
+    start = len(integers) - n
+    count = 0
+    for k in range(n):
+        if integers[start + k] % 2 != 0:
+            count = count + 1
+    return count
 
 ###############################################################################
 # Some problems iterate (loop) through PART of the sequence,
@@ -341,7 +351,10 @@ def index_of_first_negative(numbers):
     #     The testing code is already written for you (above).
     #     If you have questions about the testing code, ask for help.
     # -------------------------------------------------------------------------
-
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            return k
+    return -1
 
 def run_test_contains_an_a():
     """ Tests the   contains_an_a   function. """
@@ -415,7 +428,10 @@ def contains_an_a(s):
     #   -- True  and  False  are built-in constants.
     #      Do NOT return the STRING "True" or the STRING "False".
     # -------------------------------------------------------------------------
-
+    for k in range(len(s)):
+        if s[k] == 'a':
+            return True
+    return False
 
 ###############################################################################
 # Some problems iterate (loop) through the sequence accessing TWO

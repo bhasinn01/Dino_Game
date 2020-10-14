@@ -14,8 +14,8 @@ plus practice at:
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -27,15 +27,15 @@ def main():
     """ Calls the   TEST   functions in this module. """
     # Un-comment the tests as you implement their functions.
     run_test_biggest_at_even()
-    # run_test_smallest_index_where_zero()
-    # run_test_multiply_x_coordinates()
-    # run_test_count_same()
-    # run_test_index_of_largest_number()
-    # run_test_has_stutters()
-    # run_test_shortest_string()
-    # run_test_is_palindrome()
-    # run_test_make_even_numbers()
-    # run_test_make_concatenation()
+    run_test_smallest_index_where_zero()
+    run_test_multiply_x_coordinates()
+    run_test_count_same()
+    run_test_index_of_largest_number()
+    run_test_has_stutters()
+    run_test_shortest_string()
+    run_test_is_palindrome()
+    run_test_make_even_numbers()
+    run_test_make_concatenation()
 
 
 def run_test_biggest_at_even():
