@@ -115,7 +115,7 @@ def main():
     run_test_bigger_triangle()
     run_test_shrink_or_expand()
     run_test_return_doubled_triangle()
-    # run_test_get_largest_area()
+    run_test_get_largest_area()
 
 
 ###############################################################################
@@ -173,6 +173,7 @@ class Triangle(object):
         self.a = a.clone()
         self.b = b.clone()
         self.c = c.clone()
+        self.tri = 0
 
 
     # IMPORTANT: Read the HINT in the specification below.
@@ -274,12 +275,18 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        tri = self.area()
         self.a.x = self.a.x * f
         self.a.y = self.a.y * f
         self.b.x = self.b.x * f
         self.b.y = self.b.y * f
         self.c.x = self.c.x * f
         self.c.y = self.c.y * f
+        new_tri = self.area()
+        if tri > new_tri:
+            self.tri = tri
+        else:
+            self.tri = new_tri
 
     def return_doubled_triangle(self):
         """
@@ -295,7 +302,7 @@ class Triangle(object):
           :rtype: Triangle:
         """
         # -------------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -303,12 +310,11 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # -------------------------------------------------------------------------
-        self.a.x = self.a.x * 2
-        self.a.y = self.a.y * 2
-        self.b.x = self.b.x * 2
-        self.b.y = self.b.y * 2
-        self.c.x = self.c.x * 2
-        self.c.y = self.c.y * 2
+        a = Point(self.a.x * 2, self.a.y * 2)
+        b = Point(self.b.x * 2, self.b.y * 2)
+        c = Point(self.c.x * 2, self.c.y * 2)
+        return Triangle(a, b, c)
+
     def get_largest_area(self):
         """
         What comes in:
@@ -324,7 +330,7 @@ class Triangle(object):
           :rtype: float:
         """
         # ---------------------------------------------------------------------
-        # TODO: 8.
+        # DONE: 8.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -332,7 +338,9 @@ class Triangle(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
-
+        if self.tri == 0:
+            return self.area()
+        return self.tri
 
 ###############################################################################
 # The TEST functions for the  Triangle  class begin here.
