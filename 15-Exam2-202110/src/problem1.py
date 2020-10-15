@@ -2,8 +2,8 @@
 Exam 2, Problem 1
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import testing_helper
 import time
@@ -16,12 +16,12 @@ def main():
     print("Un-comment the tests one by one")
     print("as you work the problems.")
     print("--------------------------------------------------")
-    # run_test_problem1a()
-    # run_test_problem1b()
+    run_test_problem1a()
+    run_test_problem1b()
 
 
 ###############################################################################
-# TODO: 2. Right-click on the  src  folder and
+# DONE: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 ###############################################################################
@@ -106,10 +106,11 @@ def problem1a(numbers):
       :rtype: int
     """
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
-
+    for k in range(len(numbers)):
+        return numbers[len(numbers)//2]
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
@@ -350,7 +351,7 @@ def problem1b(numbers):
       :rtype: float
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #   IMPORTANT:
     #    **  For full credit you must appropriately use (call)
@@ -359,7 +360,13 @@ def problem1b(numbers):
     #    **  You simply MUST do a concrete example by hand to figure out
     #    **  the steps needed to solve this (or any!) problem.
     ###########################################################################
-
+    sum = 0
+    count = 0
+    for k in range(len(numbers)):
+        if numbers[k] >= problem1a(numbers):
+            sum = sum + numbers[k]
+            count = count + 1
+    return sum / count
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
