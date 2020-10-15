@@ -2,8 +2,8 @@
 Exam 2, Problem 3
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import testing_helper
 import time
@@ -16,8 +16,8 @@ def main():
     print("Un-comment the tests one by one")
     print("as you work the problems.")
     print("--------------------------------------------------")
-    # run_test_problem3a()
-    # run_test_problem3b()
+    run_test_problem3a()
+    run_test_problem3b()
 
 def run_test_problem3a():
     """ Tests the problem3a function """
@@ -239,6 +239,11 @@ def problem3a(s):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    for k in range(len(s) - 1):
+        if s[k] == vowels[k]:
+            return k
+    return -1
 
 
 def run_test_problem3b():
@@ -466,7 +471,11 @@ def problem3b(list_of_strings):
     #    **  For full credit you must appropriately use (call)
     #    **  the   appropriate   function(s) that are DEFINED ABOVE.
     ###########################################################################
-
+    seq = []
+    for k in range(len(list_of_strings)):
+        vowel = problem3a(list_of_strings)
+        seq.append(vowel)
+    return seq
 
 ###############################################################################
 # Our tests use the following to print error messages in red.

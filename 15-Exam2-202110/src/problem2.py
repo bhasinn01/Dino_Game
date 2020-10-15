@@ -2,8 +2,8 @@
 Exam 2, Problem 2
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import testing_helper
 import time
@@ -15,8 +15,8 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_get_color()
-    # run_test_advance_color()
+    run_test_get_color()
+    run_test_advance_color()
     # run_test_advance_color_many_times()
     # run_test_cars_waiting()
     # run_test_cars_going_through()
@@ -38,7 +38,7 @@ def main():
 ###############################################################################
 
 ###############################################################################
-# TODO: 2.  READ the   TrafficLight   class defined below.
+# DONE: 2.  READ the   TrafficLight   class defined below.
 ###############################################################################
 class TrafficLight:
     """
@@ -57,11 +57,14 @@ class TrafficLight:
             instance variables are needed by methods later in this problem.
         """
         # ---------------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement this method.
         # ---------------------------------------------------------------------
+        self.color = color
+        num_cars = 0
+        count = 0
 
     def get_color(self):
         """
@@ -83,7 +86,7 @@ class TrafficLight:
           :rtype: str
         """
         # ---------------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -92,6 +95,7 @@ class TrafficLight:
         #       Uncomment the call to run_test_get_color in main()
         #       This will test both your __init__ and get_color methods.
         # ---------------------------------------------------------------------
+        return self.color
 
     def advance_color(self):
         """
@@ -135,6 +139,14 @@ class TrafficLight:
         #        The tests are already written (below).
         #       Uncomment the call to run_test_advance_color in main()
         # ---------------------------------------------------------------------
+        if TrafficLight.get_color() == 'green':
+            return 'yellow'
+        elif TrafficLight.get_color() == 'yellow':
+            return 'red'
+        else:
+            return 'green'
+
+
 
     # Be sure to read the IMPORTANT note in the following specification!
     def advance_color_many_times(self, n):
@@ -158,6 +170,7 @@ class TrafficLight:
         #  IMPORTANT:
         #    No credit unless your code ACTUALLY CALLS   advance_color
         # ---------------------------------------------------------------------
+        self.advance_color(n)
 
     def car_waits_at_light(self):
         """
@@ -174,6 +187,8 @@ class TrafficLight:
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement this method.  The NEXT method will test it.
         # ---------------------------------------------------------------------
+        for k in range(len(TrafficLight.advance_color()):
+            num_cars = num_cars + 1
 
     def get_number_of_cars_waiting(self):
         """
@@ -206,6 +221,7 @@ class TrafficLight:
         #        The tests are already written (below).
         #       Uncomment the call to run_test_cars_waiting in main()
         # ---------------------------------------------------------------------
+        return self.num_cars
 
     def cars_go_through_light(self):
         """
@@ -224,6 +240,8 @@ class TrafficLight:
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement this method.  Other methods will test it.
         # ---------------------------------------------------------------------
+        if self.num_cars > 0:
+            TrafficLight.advance_color()
 
     def get_number_of_cars_through_light(self):
         """
@@ -261,6 +279,7 @@ class TrafficLight:
         #        The tests are already written (below).
         #       Uncomment the call to run_test_cars_going_through() in main()
         # ---------------------------------------------------------------------
+        if self.num_cars == 0:
 
     def car_arrives_at_light(self):
         """
