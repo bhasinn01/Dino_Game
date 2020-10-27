@@ -17,12 +17,12 @@ def main():
 
     run_test_get_color()
     run_test_advance_color()
-    # run_test_advance_color_many_times()
-    # run_test_cars_waiting()
-    # run_test_cars_going_through()
-    # run_test_car_arrives_at_light()
-    # run_test_hazardous_intersection()
-    # run_test_clone_light()
+    run_test_advance_color_many_times()
+    run_test_cars_waiting()
+    run_test_cars_going_through()
+    run_test_car_arrives_at_light()
+    run_test_hazardous_intersection()
+    run_test_clone_light()
 
 
 ###############################################################################
@@ -63,8 +63,8 @@ class TrafficLight:
         #   b. Implement this method.
         # ---------------------------------------------------------------------
         self.color = color
-        num_cars = 0
-        count = 0
+        self.cars = 0
+        self.gone = 0
 
     def get_color(self):
         """
@@ -131,7 +131,7 @@ class TrafficLight:
           :rtype: str
         """
         # ---------------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -139,14 +139,13 @@ class TrafficLight:
         #        The tests are already written (below).
         #       Uncomment the call to run_test_advance_color in main()
         # ---------------------------------------------------------------------
-        if TrafficLight.get_color() == 'green':
-            return 'yellow'
-        elif TrafficLight.get_color() == 'yellow':
-            return 'red'
+        if self.color == "yellow":
+            self.color = "red"
+        elif self.color == "red":
+            self.color = "green"
         else:
-            return 'green'
-
-
+            self.color = "yellow"
+        return self.color
 
     # Be sure to read the IMPORTANT note in the following specification!
     def advance_color_many_times(self, n):
@@ -160,7 +159,7 @@ class TrafficLight:
           NO CREDIT unless your code ACTUALLY CALLS  advance_color
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement and test this method.
@@ -170,7 +169,8 @@ class TrafficLight:
         #  IMPORTANT:
         #    No credit unless your code ACTUALLY CALLS   advance_color
         # ---------------------------------------------------------------------
-        self.advance_color(n)
+        for k in range(n):
+            self.advance_color()
 
     def car_waits_at_light(self):
         """
@@ -182,13 +182,12 @@ class TrafficLight:
           waiting at this TrafficLight.
         """
         # ---------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement this method.  The NEXT method will test it.
         # ---------------------------------------------------------------------
-        for k in range(len(TrafficLight.advance_color()):
-            num_cars = num_cars + 1
+        self.cars = self.cars + 1
 
     def get_number_of_cars_waiting(self):
         """
@@ -214,14 +213,14 @@ class TrafficLight:
           :rtype: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 8.
+        # DONE: 8.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement and test this method.
         #        The tests are already written (below).
         #       Uncomment the call to run_test_cars_waiting in main()
         # ---------------------------------------------------------------------
-        return self.num_cars
+        return self.cars
 
     def cars_go_through_light(self):
         """
@@ -235,13 +234,15 @@ class TrafficLight:
           as gone through.
         """
         # ---------------------------------------------------------------------
-        # TODO: 9.
+        # DONE: 9.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement this method.  Other methods will test it.
         # ---------------------------------------------------------------------
-        if self.num_cars > 0:
-            TrafficLight.advance_color()
+        if self.cars > 0:
+            self.gone = self.gone + self.cars
+            self.cars = 0
+
 
     def get_number_of_cars_through_light(self):
         """
@@ -272,14 +273,14 @@ class TrafficLight:
           :rtype: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 10.
+        # DONE: 10.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement and test this method.
         #        The tests are already written (below).
         #       Uncomment the call to run_test_cars_going_through() in main()
         # ---------------------------------------------------------------------
-        if self.num_cars == 0:
+        return self.gone
 
     def car_arrives_at_light(self):
         """
@@ -315,7 +316,7 @@ class TrafficLight:
 
         """
         # ---------------------------------------------------------------------
-        # TODO: 11.
+        # DONE: 11.
         #   a. READ the above specification, pay special attention to the
         #      examples.
         #        ** ASK QUESTIONS AS NEEDED. **
@@ -323,6 +324,10 @@ class TrafficLight:
         #        The tests are already written (below).
         #       Uncomment the call to run_test_car_arrives_at_light() in main()
         # ---------------------------------------------------------------------
+        if self.color == "red":
+            self.cars = self.cars + 1
+        else:
+            self.gone = self.gone + 1
 
     def is_hazardous_intersection(self, other_light):
         """
@@ -358,7 +363,7 @@ class TrafficLight:
           :rtype: bool
         """
         # ---------------------------------------------------------------------
-        # TODO: 12.
+        # DONE: 12.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement and test this method.
@@ -366,6 +371,13 @@ class TrafficLight:
         #       Uncomment the call to run_test_hazardous_intersection() in
         #       main()
         # ---------------------------------------------------------------------
+        if self.color == "red":
+            if self.cars > 0:
+                if other_light.color == "red":
+                    if other_light.cars > 0:
+                        return True
+        return False
+
 
     def clone(self):
         """
@@ -379,13 +391,17 @@ class TrafficLight:
           :rtype: TrafficLight
         """
         # ---------------------------------------------------------------------
-        # TODO: 13.
+        # DONE: 13.
         #   a. READ the above specification.
         #        ** ASK QUESTIONS AS NEEDED. **
         #   b. Implement and test this method.
         #        The tests are already written (below).
         #       Uncomment the call to run_test_clone_light() in main()
         # ---------------------------------------------------------------------
+        NewLight = TrafficLight(self.color)
+        NewLight.cars = self.cars
+        NewLight.gone = self.gone
+        return NewLight
 
 
 ###############################################################################
