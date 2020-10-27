@@ -2,7 +2,7 @@
 Exam 2, Problem 2
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and Neha Bhasin
+         and Neha Bhasin.
 """  # DONE: 1. Put your name in the line above
 
 import testing_helper
