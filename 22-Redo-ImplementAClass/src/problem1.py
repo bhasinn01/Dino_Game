@@ -2,8 +2,8 @@
 Exam 2, problem 2.
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import typing
@@ -23,12 +23,12 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
 
-    # run_test_init()
-    # run_test_fill()
-    # run_test_pour()
-    # run_test_pour_two()
-    # run_test_double_sized_pot()
-    # run_test_get_amount_filled()
+    run_test_init()
+    run_test_fill()
+    run_test_pour()
+    run_test_pour_two()
+    run_test_double_sized_pot()
+    run_test_get_amount_filled()
 
 
 ###############################################################################
@@ -54,7 +54,7 @@ class CoffeePot(object):
         Examples:  See tests.
         """
         # ---------------------------------------------------------------------
-        # TODO: 2.
+        # DONE: 2.
         #   a. READ the above specification.
         #      READ the test case supplied in the testing section below.
         #        ** ASK QUESTIONS AS NEEDED. **
@@ -62,6 +62,10 @@ class CoffeePot(object):
         #        A FEW tests are already written (below), but they may not
         #        be adequate to expose all bugs.  Add more tests as desired.
         # ---------------------------------------------------------------------
+        self.volume = volume
+        self.coffee = coffee
+        self.filled = 0
+        self.added = 0
 
     def fill(self):
         """
@@ -75,8 +79,11 @@ class CoffeePot(object):
            then calling this method would change this CoffeePot's coffee to 12.
         """
         # ---------------------------------------------------------------------
-        # TODO: 3.  Same instructions as per the previous, but for this method.
+        # DONE: 3.  Same instructions as per the previous, but for this method.
         # ---------------------------------------------------------------------
+        self.added = self.volume - self.coffee
+        self.coffee = self.volume
+        self.filled = self.filled + self.added
 
     def pour(self, ounces):
         """
@@ -97,8 +104,12 @@ class CoffeePot(object):
                  would change this CoffeePot's coffee to 0.
         """
         # ---------------------------------------------------------------------
-        # TODO: 4.  Same instructions as per the previous, but for this method.
+        # DONE: 4.  Same instructions as per the previous, but for this method.
         # ---------------------------------------------------------------------
+        if ounces >= self.coffee:
+            self.coffee = 0
+        else:
+            self.coffee = self.coffee - ounces
 
     def pour_two(self, m, n, other_coffee_pot):
         """
@@ -117,8 +128,10 @@ class CoffeePot(object):
            :type other_coffee_pot: CoffeePot
         """
         # ---------------------------------------------------------------------
-        # TODO: 5.  Same instructions as per the previous, but for this method.
+        # DONE: 5.  Same instructions as per the previous, but for this method.
         # ---------------------------------------------------------------------
+        self.pour(m)
+        other_coffee_pot.pour(n)
 
     def double_sized_pot(self):
         """
@@ -130,8 +143,12 @@ class CoffeePot(object):
         Side effects: None.
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.  Same instructions as per the previous, but for this method.
+        # DONE: 6.  Same instructions as per the previous, but for this method.
         # ---------------------------------------------------------------------
+        new_pot = CoffeePot(self.volume, self.coffee)
+        new_pot.coffee = 0
+        new_pot.volume = self.volume * 2
+        return new_pot
 
     def get_amount_filled(self):
         """
@@ -144,9 +161,9 @@ class CoffeePot(object):
         Side effects: None.
         """
         # ---------------------------------------------------------------------
-        # TODO: 7.  Same instructions as per the previous, but for this method.
+        # DONE: 7.  Same instructions as per the previous, but for this method.
         # ---------------------------------------------------------------------
-
+        return self.filled
 
 ###############################################################################
 # The TEST functions for the  CoffeePot  class begin here.
