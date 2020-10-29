@@ -6,11 +6,11 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -79,7 +79,7 @@ def shape(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     ###########################################################################
@@ -91,6 +91,17 @@ def shape(r):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:  15 minutes.
     # -------------------------------------------------------------------------
+    for k in range(r):
+        for j in range(k):
+            print('*', end='')
+        for i in range(r, k, -1):
+            print('+', end='')
+        print('!', end='')
+        for j in range(r - k, 0, -1):
+            print(j, end='')
+        for i in range(k):
+            print('-', end='')
+        print()
 
 
 # -----------------------------------------------------------------------------
