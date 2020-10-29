@@ -6,11 +6,11 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -45,7 +45,7 @@ def main():
 def run_test_doubler():
     """ Tests the    doubler    function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. READ the tests that we supplied in this function, asking
+    # DONE: 3. READ the tests that we supplied in this function, asking
     #  questions as needed.  Once you UNDERSTAND the tests that we supplied,
     #  ADD ANOTHER ** GOOD ** TEST of your own for the  doubler  function,
     #  using the same style for testing as we did.
@@ -140,11 +140,25 @@ def run_test_doubler():
     print_actual_result_of_test(None, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 3 (continued). Write at least ** 1 GOOD ** additional test for the
+    # DONE: 3 (continued). Write at least ** 1 GOOD ** additional test for the
     #    doubler  function, following the style we used for the above tests.
     #
     # Test 4:  (PUT YOUR TEST BELOW THIS)
     # -------------------------------------------------------------------------
+    seq_of_lists = [[0], [1, 2, 3], [], [100]]
+
+    # After the function call,  seq_of_lists  should be mutated to:
+    expected_mutated = [[0], [2, 4, 6], [], [200]]
+
+    print_function_call_of_test([seq_of_lists], test_results, format_string)
+
+    print()
+    print("For the MUTATION of the argument:")  # Testing MUTATION
+    print("  Expected:", expected_mutated)
+
+    actual = doubler(seq_of_lists)
+
+    print_actual_result_of_test(expected_mutated, seq_of_lists, test_results)
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -167,7 +181,7 @@ def doubler(seq_of_lists):
       :type seq_of_lists: sequence of lists
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -175,12 +189,16 @@ def doubler(seq_of_lists):
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   5 minutes.
     # -------------------------------------------------------------------------
+    for k in range(len(seq_of_lists)):
+        seq = seq_of_lists[k]
+        for j in range(len(seq)):
+            seq[j] = seq[j] * 2
 
 
 def run_test_zero_changer():
     """ Tests the    zero_changer    function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. READ the tests that we supplied in this function, asking
+    # DONE: 5. READ the tests that we supplied in this function, asking
     #  questions as needed.  Once you UNDERSTAND the tests that we supplied,
     #  ADD ANOTHER ** GOOD ** TEST of your own for the  zero_changer  function,
     #  using the same style for testing as we did.
@@ -293,11 +311,30 @@ def run_test_zero_changer():
     print_actual_result_of_test(None, actual, test_results)
 
     # -------------------------------------------------------------------------
-    # TODO: 5 (continued). Write at least ** 1 GOOD ** additional test for the
+    # DONE: 5 (continued). Write at least ** 1 GOOD ** additional test for the
     #  zero_changer  function, following the style we used for the above tests.
     #
     # Test 5:  (PUT YOUR TEST BELOW THIS)
     # -------------------------------------------------------------------------
+    tuple_of_lists = ([0], [0], [0, 0, 0])
+
+    # After the function call,  tuple_of_lists  should be mutated to:
+    expected_mutated = ([1], [2], [3, 4, 5])
+
+    print_function_call_of_test([tuple_of_lists], test_results, format_string)
+
+    print()
+    print("For the MUTATION of the argument:")  # Testing MUTATION
+    print("  Expected:", expected_mutated)
+
+    actual = zero_changer(tuple_of_lists)
+
+    print_actual_result_of_test(expected_mutated, tuple_of_lists, test_results)
+
+    print()
+    print("For the RETURNED VALUE:")  # Nothing (i.e., None) should be returned
+    print("  Expected:", None)
+    print_actual_result_of_test(None, actual, test_results)
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -328,7 +365,7 @@ def zero_changer(tuple_of_lists):
       :type tuple_of_lists: tuple of list[int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -336,6 +373,13 @@ def zero_changer(tuple_of_lists):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  10 to 15 minutes.
     # -------------------------------------------------------------------------
+    num = 0
+    for k in range(len(tuple_of_lists)):
+        tup = tuple_of_lists[k]
+        for j in range(len(tup)):
+            if tup[j] == 0:
+                num = num + 1
+                tup[j] = num
 
 
 ###############################################################################
