@@ -6,11 +6,11 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -118,7 +118,7 @@ def integers(sequence_of_sequences):
       :rtype: list of int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #  ########################################################################
     #  HINT: The
@@ -139,7 +139,13 @@ def integers(sequence_of_sequences):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:  10 minutes.
     # -------------------------------------------------------------------------
-
+    new_list = []
+    for k in range(len(sequence_of_sequences)):
+        seq = sequence_of_sequences[k]
+        for j in range(len(seq)):
+            if type(seq[j]) == int:
+                new_list.append(seq[j])
+    return new_list
 
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
@@ -226,7 +232,7 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #  ########################################################################
     #  HINTS: The  type   function can be used to identify strings,
@@ -248,7 +254,14 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # -------------------------------------------------------------------------
-
+    new_str = ""
+    for k in range(len(sequence_of_sequences)):
+        seq = sequence_of_sequences[k]
+        if type(seq) == str:
+            for j in range(len(seq)):
+                if seq[j].isupper():
+                    new_str = new_str + seq[j]
+    return new_str
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
