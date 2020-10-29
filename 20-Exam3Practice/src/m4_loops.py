@@ -6,11 +6,11 @@ This problem provides practice at:  LOOPS, including:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  [Note: same _TODO_ as its matching one in module m1.]
+# DONE: 2.  [Note: same _TODO_ as its matching one in module m1.]
 #  Students:
 #  __
 #  These problems have DIFFICULTY and TIME ratings:
@@ -53,7 +53,7 @@ def main():
 def run_test_practice_problem3a():
     """ Tests the   practice_problem3a  function. """
     ###########################################################################
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  practice_problem3a  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #  __
@@ -146,7 +146,7 @@ def run_test_practice_problem3a():
     st.SimpleTestCase.run_tests('practice_problem3a', tests)
 
     ###########################################################################
-    # TODO: 3 continued:  More tests:
+    # DONE: 3 continued:  More tests:
     #      YOU add at least **   1   ** additional test here.
     #  __
     #   You can use the   SimpleTestCase  class as above, or use
@@ -155,7 +155,10 @@ def run_test_practice_problem3a():
     #   SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #               that they are adequate tests!
     ###########################################################################
-
+    expected = ([1])
+    print("Expected:", expected)
+    actual = practice_problem3a(1, 1, -1.0)
+    print("Actual:", actual)
 
 def practice_problem3a(start, stop, threshold):
     """
@@ -206,7 +209,7 @@ def practice_problem3a(start, stop, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
@@ -214,12 +217,16 @@ def practice_problem3a(start, stop, threshold):
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   5 minutes.
     ###########################################################################
-
+    num = []
+    for k in range(start, stop + 1):
+        if math.cos(k) + math.sin(k) > threshold:
+            num.append(k)
+    return num
 
 def run_test_practice_problem3b():
     """ Tests the   practice_problem3b  function. """
     ###########################################################################
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  practice_problem3b  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #  __
@@ -309,7 +316,7 @@ def run_test_practice_problem3b():
     st.SimpleTestCase.run_tests('practice_problem3b', tests)
 
     ###########################################################################
-    # TODO: 5 continued:  More tests:
+    # DONE: 5 continued:  More tests:
     #      YOU add at least **   2   ** additional tests here.
     #  __
     #   You can use the   SimpleTestCase  class as above, or use
@@ -318,7 +325,15 @@ def run_test_practice_problem3b():
     #   SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #               that they are adequate tests!
     ###########################################################################
+    expected = ([1, 2, 3, 4, 5])
+    print("Expected:", expected)
+    actual = practice_problem3b(1, 5, 2)
+    print("Actual:", actual)
 
+    expected = ([])
+    print("Expected:", expected)
+    actual = practice_problem3b(5, 0, 1)
+    print("Actual:", actual)
 
 def practice_problem3b(start, n, threshold):
     """
@@ -388,7 +403,7 @@ def practice_problem3b(start, n, threshold):
       :type threshold: float
     """
     ###########################################################################
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ###########################################################################
@@ -396,7 +411,22 @@ def practice_problem3b(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
-
+    num = []
+    count = start
+    if n == 0:
+        return num
+    elif threshold > 2 ** 0.5:
+        for k in range(start, start + n):
+            num.append(k)
+        return num
+    else:
+        while True:
+            if n <= len(num):
+                break
+            if math.cos(count) + math.sin(count) > threshold:
+                num.append(count)
+            count = count + 1
+        return num
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
