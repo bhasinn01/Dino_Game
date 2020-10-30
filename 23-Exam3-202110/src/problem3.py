@@ -121,14 +121,14 @@ def christmas_tree(r):
     for k in range(r):
         for j in range(r - k):
             print(j + 1, end='')
-        for i in range(k + 1):
+        for i in range(k):
             print('*', end='')
         for j in range(k + 1):
             print('*', end='')
         for i in range(r - k, 0, -1):
             print(i, end='')
         print()
-    for j in range(r):
+    for j in range(r-1):
         print(' ', end='')
     print("***")
 
