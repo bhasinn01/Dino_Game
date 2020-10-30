@@ -2,8 +2,8 @@
 Exam 3, Problem 1
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import time
 import testing_helper
@@ -124,7 +124,14 @@ def problem1a(seq, num):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
-
+    sum = 0
+    for k in range(len(seq)):
+        while True:
+            if seq[k] == num:
+                break
+        sum = sum + seq[k]
+    sum = sum + num
+    return sum
 
 def run_test_problem1b():
     """ Test the   problem1b   function"""
@@ -274,6 +281,18 @@ def problem1b(seq_seq, num):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
+    sum = 0
+    for k in range(len(seq_seq)):
+        seq = seq_seq[k]
+        for j in range(len(seq)):
+             while True:
+                if seq[j] == num:
+                    break
+            problem1a(seq[j], num)
+        sum = sum + seq[j]
+    return sum
+
+
 
 
 ###############################################################################

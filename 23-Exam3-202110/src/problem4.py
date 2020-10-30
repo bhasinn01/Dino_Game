@@ -2,8 +2,8 @@
 Exam 3, Problem 4
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import time
 import testing_helper
@@ -127,7 +127,11 @@ def problem4a(list_of_digits):
     # TODO: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
-
+    sum = 0
+    for k in range(len(list_of_digits)):
+            term = list_of_digits[-k] * (10 ** (k))
+            sum = sum + term
+    return sum
 
 def run_test_problem4b():
     """ Test the   problem4b   function"""
@@ -265,7 +269,17 @@ def problem4b(left, right):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
-
+    list = []
+    string1 = ""
+    string2 = ""
+    for k in range(len(left)):
+        string1 = string1 + str(left[k])
+    for j in range(len(right)):
+        string2 = string2 + str(right[j])
+    sum = int(string1) + int(string2)
+    for i in range(len(str(sum))):
+        list.append(int(str(sum)[i]))
+    return list
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
