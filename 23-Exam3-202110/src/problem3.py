@@ -2,8 +2,8 @@
 Exam 3, Problem 3
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
-"""  # TODO: 1. Put your name in the line above
+         and Neha Bhasin
+"""  # DONE: 1. Put your name in the line above
 
 import time
 import testing_helper
@@ -115,10 +115,22 @@ def christmas_tree(r):
         print and use a separate counter for those.
     """
     # -----------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(r - k):
+            print(j + 1, end='')
+        for i in range(k + 1):
+            print('*', end='')
+        for j in range(k + 1):
+            print('*', end='')
+        for i in range(r - k, 0, -1):
+            print(i, end='')
+        print()
+    for j in range(r):
+        print(' ', end='')
+    print("***")
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
