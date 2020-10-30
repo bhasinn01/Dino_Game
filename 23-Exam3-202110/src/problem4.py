@@ -270,13 +270,13 @@ def problem4b(left, right):
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
     list = []
-    string1 = ""
-    string2 = ""
+    string_1 = ""
+    string_2 = ""
     for k in range(len(left)):
-        string1 = string1 + str(left[k])
+        string_1 = string_1 + str(left[k])
     for j in range(len(right)):
-        string2 = string2 + str(right[j])
-    sum = int(string1) + int(string2)
+        string_2 = string_2 + str(right[j])
+    sum = int(string_1) + int(string_2)
     for i in range(len(str(sum))):
         list.append(int(str(sum)[i]))
     return list
