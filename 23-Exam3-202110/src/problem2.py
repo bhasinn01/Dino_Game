@@ -3,7 +3,7 @@ Exam 3, Problem 2
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
          and Neha Bhasin
-"""  # TODO: 1. Put your name in the line above
+"""  # DONE: 1. Put your name in the line above
 
 import time
 import testing_helper
@@ -296,7 +296,7 @@ def problem2b(seq_seq_of_int):
     :rtype: list[int]
     """
     # -----------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
     return_val = []
