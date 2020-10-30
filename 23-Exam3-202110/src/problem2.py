@@ -2,7 +2,7 @@
 Exam 3, Problem 2
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammad Noureddine, their colleagues,
-         and PUT_YOUR_NAME_HERE
+         and Neha Bhasin
 """  # TODO: 1. Put your name in the line above
 
 import time
@@ -163,10 +163,17 @@ def problem2a(seq_seq, word):
       :rtype: int
     """
     # -----------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
-
+    count = 0
+    for k in range(len(seq_seq)):
+        seq = seq_seq[k]
+        for j in range(len(seq)):
+            if seq[j] == word:
+                count = count + 1
+                seq[j] = "Found IT!"
+    return count
 
 def run_test_problem2b():
     """ Test the   problem2a  function"""
@@ -292,6 +299,19 @@ def problem2b(seq_seq_of_int):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -----------------------------------------------------------------
+    return_val = []
+    smallest_num = 0
+    for k in range(len(seq_seq_of_int)):
+        seq1 = seq_seq_of_int[0]
+        for j in range(len(seq1)):
+            if seq1[j] <= seq1[0]:
+                smallest_num = seq1[j]
+        seq = seq_seq_of_int[k]
+        for i in range(len(seq)):
+            if seq[i] < smallest_num:
+                return_val.append(seq[i])
+    return return_val
+
 
 
 ###############################################################################
