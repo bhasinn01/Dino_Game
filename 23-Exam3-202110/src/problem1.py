@@ -133,6 +133,7 @@ def problem1a(seq, num):
     sum = sum + num
     return sum
 
+
 def run_test_problem1b():
     """ Test the   problem1b   function"""
     print()
