@@ -109,6 +109,17 @@ class EnemyFleet:
             if self.badguys[k].is_dead:
                 del self.badguys[k]
 
+class Scoreboard:
+    def __init__(self, screen):
+        self.screen = screen
+        self.score = 0
+        self.font = pygame.font.Font(None, 30)
+
+    def draw(self):
+        score_string = "Score: {}".format(self.score)
+        score_image = self.font.render(score_string, True, (255, 255, 255))
+        self.screen.blit(score_image, (5, 5))
+
 
 def main():
     pygame.init()
@@ -125,13 +136,14 @@ def main():
     # DONE 1: Create a Fighter (called fighter) at location  320, 590
     fighter = Fighter(screen, screen.get_width() // 2 - 50, screen.get_height() - 60)
     game_over_image = pygame.image.load("gameover.png")
+    scoreboard = Scoreboard(screen)
 
     while True:
         clock.tick(60)
         for event in pygame.event.get():
             pressed_keys = pygame.key.get_pressed()
             # DONE 5: If the event type is KEYDOWN and pressed_keys[pygame.K_SPACE] is True, then fire a missile
-            if pressed_keys[pygame.K_SPACE]: #event.type == pygame.KEYDOWN and
+            if event.type == pygame.KEYDOWN and pressed_keys[pygame.K_SPACE]:
                 fighter.fire()
             if event.type == pygame.QUIT:
                 sys.exit()
@@ -146,6 +158,7 @@ def main():
         #   DONE 8: Draw the missile
         for missile in fighter.missiles:
             missile.draw()
+        scoreboard.draw()
 
         if is_game_over:
             screen.blit(game_over_image, (170, 200))
@@ -177,6 +190,7 @@ def main():
         for badguy in enemy_fleet.badguys:
             for missile in fighter.missiles:
                 if badguy.hit_by(missile):
+                    scoreboard.score += 100
                     badguy.is_dead = True
                     missile.has_exploded = True
 
@@ -200,11 +214,12 @@ def main():
             if badguy.y > screen.get_height() - fighter.image.get_height() - badguy.image.get_height():
                 is_game_over = True
 
-        # TODO 23: Create a Scoreboard class (from scratch)
+        # DONE 23: Create a Scoreboard class (from scratch)
         # Hints: Instance variables: screen, score, and font (size 30)
         #    Methods: draw (and __init__)
         # Create a scoreboard and draw it at location 5, 5
         # When a Badguy is killed add 100 points to the scoreboard.score
+
 
         # TODO 24: Optional extra - Add sound effects!
 
