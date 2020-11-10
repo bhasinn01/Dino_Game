@@ -8,10 +8,9 @@ class Dino:
         self.x = x
         self.y = y
         self.image = pygame.image.load("dino1.PNG")
-        self.speed = 5
         self.original_y = y
         self.isjumping = False
-        self.v = 5
+        self.v = 8
         self.m = 1
 
     def draw(self):
@@ -24,9 +23,9 @@ class Dino:
             self.v = self.v - 1
             if self.v < 0:
                 self.m = -1
-            if self.v == -6:
+            if self.v == -9:
                 self.isjumping = False
-                self.v = 5
+                self.v = 8
                 self.m = 1
 
     def duck(self):
@@ -51,7 +50,7 @@ def main():
 
         pressed_keys = pygame.key.get_pressed()
         if dino.isjumping == False:
-            if pressed_keys[pygame.K_SPACE]:
+            if pressed_keys[pygame.K_SPACE] or pressed_keys[pygame.K_UP]:
                 dino.isjumping = True
         dino.jump()
 
