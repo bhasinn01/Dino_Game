@@ -15,9 +15,7 @@ class Dino:
         self.screen.blit(self.image, (self.x, self.y))
 
     def jump(self):
-        self.y = self.y - self.speed
-        if self.y < self.screen.get_height() - 56 - self.speed * 2:
-            self.speed = -self.speed * 2
+        pass
 
     def duck(self):
        pass
@@ -26,6 +24,9 @@ def main():
     pygame.init()
     pygame.display.set_caption("Dino Game")
     screen = pygame.display.set_mode((800, 200))
+    isjump = False
+    v = 5
+    m = 1
 
     clock = pygame.time.Clock()
 
@@ -40,8 +41,19 @@ def main():
         screen.fill((255, 255, 255))
 
         pressed_keys = pygame.key.get_pressed()
-        if pressed_keys[pygame.K_SPACE]:
-            dino.jump()
+        if isjump == False:
+            if pressed_keys[pygame.K_SPACE]:
+                isjump = True
+        if isjump:
+            F = (1 / 2) * m * (v ** 2)
+            dino.y -= F
+            v = v - 1
+            if v < 0:
+                m = -1
+            if v == -6:
+                isjump = False
+                v = 5
+                m = 1
 
 
         dino.draw()
