@@ -7,8 +7,8 @@ class Dino:
         self.screen = screen
         self.x = x
         self.y = y
-        self.image = pygame.image.load("dino1.PNG")
-        self.original_y = y
+        self.image = pygame.image.load("dino1.png")
+        self.image.set_colorkey((235, 235, 235))
         self.isjumping = False
         self.v = 8
         self.m = 1
@@ -31,6 +31,22 @@ class Dino:
     def duck(self):
        pass
 
+class Ground:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.x = x
+        self.y = y
+        self.image = pygame.image.load("ground.png")
+        self.speed = 5
+        self.original_x = x
+
+    def move(self):
+        self.x = self.x - self.speed
+        # if abs(self.x - self.original_x) > 1203:
+
+    def draw(self):
+        self.screen.blit(self.image, (self.x, self.y))
+
 def main():
     pygame.init()
     pygame.display.set_caption("Dino Game")
@@ -38,6 +54,7 @@ def main():
 
     clock = pygame.time.Clock()
 
+    ground = Ground(screen, 0, screen.get_height() - 19)
     dino = Dino(screen, 30, screen.get_height() - 56)
 
     while True:
@@ -54,8 +71,10 @@ def main():
                 dino.isjumping = True
         dino.jump()
 
-
+        ground.move()
+        ground.draw()
         dino.draw()
+
 
         pygame.display.update()
 
