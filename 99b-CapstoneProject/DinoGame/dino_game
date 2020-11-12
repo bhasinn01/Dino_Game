@@ -8,7 +8,6 @@ class Dino:
         self.x = x
         self.y = y
         self.image = pygame.image.load("dino1.png")
-        self.image.set_colorkey((235, 235, 235))
         self.isjumping = False
         self.v = 8
         self.m = 1
@@ -37,15 +36,18 @@ class Ground:
         self.x = x
         self.y = y
         self.image = pygame.image.load("ground.png")
+        self.image2 = pygame.image.load("ground.png")
         self.speed = 5
         self.original_x = x
 
     def move(self):
+        if (self.x < -1203):
+            self.x = 0
         self.x = self.x - self.speed
-        # if abs(self.x - self.original_x) > 1203:
 
     def draw(self):
         self.screen.blit(self.image, (self.x, self.y))
+        self.screen.blit(self.image2, (self.x + 1203, self.y))
 
 def main():
     pygame.init()
@@ -63,7 +65,7 @@ def main():
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        screen.fill((255, 255, 255))
+        screen.fill((235, 235, 235))
 
         pressed_keys = pygame.key.get_pressed()
         if dino.isjumping == False:
