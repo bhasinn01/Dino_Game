@@ -4,8 +4,8 @@ in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -13,9 +13,9 @@ def main():
     print()
     print("Un-comment and re-comment calls in MAIN one by one as you work.")
 
-    # run_test_alternating_brackets()
-    # run_test_triangle_same_number_in_each_row()
-    # run_test_triangle_all_numbers_in_each_row()
+    run_test_alternating_brackets()
+    run_test_triangle_same_number_in_each_row()
+    run_test_triangle_all_numbers_in_each_row()
 
 
 def run_test_alternating_brackets():
@@ -50,11 +50,17 @@ def alternating_brackets(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
-
+    for k in range(m - n + 1):
+        for j in range(m - k):
+            if j % 2 == 0:
+                print("[", end="")
+            else:
+                print("]", end="")
+        print()
 
 def run_test_triangle_same_number_in_each_row():
     """ Tests the    triangle_same_number_in_each_row    function. """
@@ -89,11 +95,14 @@ def triangle_same_number_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(k + 1):
+            print(k + 1, end="")
+        print()
 
 def run_test_triangle_all_numbers_in_each_row():
     """ Tests the    triangle_all_numbers_in_each_row    function. """
@@ -128,11 +137,14 @@ def triangle_all_numbers_in_each_row(r):
     Precondition:  r is a non-negative integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #  IMPLEMENTATION RESTRICTION: ** You may NOT use string multiplication **.
     # -------------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(k + 1):
+            print(j + 1, end="")
+        print()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
