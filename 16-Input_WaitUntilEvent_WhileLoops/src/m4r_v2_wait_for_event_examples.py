@@ -14,21 +14,21 @@ but using the WHILE TRUE pattern for WHILE loops.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhsain.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  Read and run this program.  Then do the following problems,
+# DONE: 2.  Read and run this program.  Then do the following problems,
 #   putting your answers RIGHT HERE IN THIS DOCUMENT.
 #  __
-#   1. Which version of   demonstrate_wait_for_sentinel  feels clearer to you?
+#   1. Which version of   demonstrate_wait_for_sentinel  feels clearer to you? The version in the previous module
 #        -- The version in this module, or
 #        -- The version in the previous module
 #   Note: reasonable people could disagree on the answer to this question.
 #  __
 #   2. Can you READ and TRACE-BY-HAND   while CONDITION:   loops,
 #        as exemplified in this module?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 ###############################################################################
 
 ###############################################################################
