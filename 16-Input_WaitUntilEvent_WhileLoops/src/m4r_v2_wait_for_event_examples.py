@@ -21,7 +21,9 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 # DONE: 2.  Read and run this program.  Then do the following problems,
 #   putting your answers RIGHT HERE IN THIS DOCUMENT.
 #  __
-#   1. Which version of   demonstrate_wait_for_sentinel  feels clearer to you? The version in the previous module
+#   1. Which version of   demonstrate_wait_for_sentinel  feels clearer to you?
+#   The version in the previous module
+#
 #        -- The version in this module, or
 #        -- The version in the previous module
 #   Note: reasonable people could disagree on the answer to this question.
