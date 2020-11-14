@@ -4,22 +4,24 @@ in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         many others before them, and now PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         many others before them, and now Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  Read and run this program, examining the code and the output.
+# DONE: 2.  Read and run this program, examining the code and the output.
 #           Then answer the questions below, writing answers in this comment.
 #  __
 #   1. Briefly describe how the output from  example_1
 #      differs from the output from  example_2.
+#      In example 1 the inner loop runs a given number m vs in example 2 the
+#      inner loop runs dependent on the value of the outer loop.
 #  __
 #   2. Do you understand what the optional   end   parameter for PRINT does?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #   3. Do you believe that you can you READ and TRACE BY HAND
 #      simple nested loops like the examples in this module?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #  After you have completed the above, change the above _TODO_ to DONE.
 #  As always,  *** GET HELP AS NEEDED.  ***
