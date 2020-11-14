@@ -13,22 +13,22 @@ but using the ITCH pattern for WHILE loops.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.  Read and run this program.  Then do the following problems,
+# DONE: 2.  Read and run this program.  Then do the following problems,
 #   putting your answers RIGHT HERE IN THIS DOCUMENT.
 #  __
-#   1. True or False?  Write your answer here: _______
+#   1. True or False?  Write your answer here: _______ True
 #      In the approach demonstrated in this module, all the loops begin with:
 #         while True:
 #  __
 #   2. What 5-letter word causes the program to break out of a loop
 #      and continue execution below the loop?
-#          Write your answer here: ______
+#          Write your answer here: ______ break
 #  __
-#   3. True or False?  Write your answer here: _______
+#   3. True or False?  Write your answer here: _______ False
 #      A  break  statement works in a  FOR   loop as well as in a  WHILE  loop.
 #  __
 #   4. Run and read the code below for:
@@ -52,18 +52,18 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #  __
 #   8. Run and read the code below for:
 #            wait_for_small_enough_number.
-#      Where in the loop are the   IF and break   statements:
+#      Where in the loop are the   IF and break   statements: At the end of the loop
 #      Choose your answer from:
 #          -- At the beginning of the loop
 #          -- In the middle of the loop
 #          -- At the end of the loop
 #  __
 #   9. Is   wait_for_small_enough_number   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #  10. Read the comment about   random.seed(...)   that begins at about
 #      line number 87 below.  Do you understand what  random.seed(...) does?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #   After you have PUT YOUR ANSWERS IN THIS COMMENT as described above,
 #     a. Find someone who has had THEIR answer checked.
