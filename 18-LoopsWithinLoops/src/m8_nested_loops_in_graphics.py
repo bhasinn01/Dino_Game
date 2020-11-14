@@ -4,8 +4,8 @@ in the context of TWO-DIMENSIONAL GRAPHICS.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -81,10 +81,33 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    orig_x = circle.center.x
+    orig_y = circle.center.y
+    x = orig_x
+    y = orig_y
+    radius = circle.radius
+    color = circle.fill_color
+    for k in range(r):
+        for j in range(3):
+            new_circle = rg.Circle(rg.Point(x, y), radius)
+            new_circle.fill_color = color
+            new_circle.attach_to(window)
+            window.render(0.1)
+            x = x + (2 * radius)
+        y = y + 2 * radius
+        x = orig_x
+    for k in range(3):
+        for j in range(c + 3):
+            new_circle = rg.Circle(rg.Point(x, y), radius)
+            new_circle.fill_color = color
+            new_circle.attach_to(window)
+            window.render(0.1)
+            x = x + (2 * radius)
+        y = y + 2 * radius
+        x = orig_x
 
 def run_test_draw_wall_on_right():
     """ Tests the    draw_wall_on_right    function. """
@@ -122,10 +145,26 @@ def draw_wall_on_right(rectangle, n, window):
     and n is a small, positive integer.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    orig_upper_r = rectangle.get_upper_right_corner()
+    orig_lower_l = rectangle.get_lower_left_corner()
+    upper_r = orig_upper_r
+    lower_l = orig_lower_l
+    orig_upper_r_x = orig_upper_r.x
+    orig_lower_l_x = orig_lower_l.x
+    for k in range(n):
+        for j in range(k + 1):
+            rect = rg.Rectangle(upper_r, lower_l)
+            rect.attach_to(window.initial_canvas)
+            window.render(0.1)
+            upper_r.x = upper_r.x - rectangle.get_width()
+            lower_l.x = lower_l.x - rectangle.get_width()
+        upper_r.y = upper_r.y + rectangle.get_height()
+        lower_l.y = lower_l.y + rectangle.get_height()
+        upper_r.x = orig_upper_r_x
+        lower_l.x = orig_lower_l_x
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
