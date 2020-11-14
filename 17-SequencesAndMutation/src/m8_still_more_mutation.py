@@ -4,8 +4,8 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
@@ -66,7 +66,7 @@ def RETURN_delete_negatives(numbers):
     where the list is a list of numbers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
@@ -74,7 +74,11 @@ def RETURN_delete_negatives(numbers):
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
     # -------------------------------------------------------------------------
-
+    list = []
+    for k in range(len(numbers)):
+        if numbers[k] >= 0:
+            list.append(numbers[k])
+    return list
 
 def run_test_MUTATE_delete_negatives():
     """ Tests the   MUTATE_delete_negatives   function. """
@@ -127,7 +131,7 @@ def MUTATE_delete_negatives(numbers):
     Precondition: The argument is a list of numbers.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
@@ -141,7 +145,9 @@ def MUTATE_delete_negatives(numbers):
     #   HINT #2: Why might it be wise to start at the end and
     #       work backwards through the list to the beginning?
     # -------------------------------------------------------------------------
-
+    for k in range(-len(numbers), 0):
+        if numbers[k] < 0:
+            del numbers[k]
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
