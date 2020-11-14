@@ -34,25 +34,27 @@ Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
 #   4. Run and read the code below for:
 #            demonstrate_wait_for_circle_to_reach_edge.
 #      Where in the loop are the   IF and break   statements:
+#        In the middle of the loop
 #      Choose your answer from:
 #          -- At the beginning of the loop
 #          -- In the middle of the loop
 #          -- At the end of the loop
 #  __
 #   5. Is   demonstrate_wait_for_circle_to_reach_edge   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #   6. Run and read the code below for:
 #            demonstrate_wait_for_sentinel.
-#      What number is used as the SENTINEL in that function? ________
+#      What number is used as the SENTINEL in that function? ________ -1
 #  __
 #   7. Is the concept of a SENTINEL and the code for
 #      demonstrate_wait_for_sentinel   100% clear to you?
-#        Yes or No?     [If No, ASK FOR HELP NOW!]
+#        Yes or No?     [If No, ASK FOR HELP NOW!] Yes
 #  __
 #   8. Run and read the code below for:
 #            wait_for_small_enough_number.
 #      Where in the loop are the   IF and break   statements: At the end of the loop
+#      In the middle of the loop
 #      Choose your answer from:
 #          -- At the beginning of the loop
 #          -- In the middle of the loop
@@ -88,11 +90,11 @@ import rosegraphics as rg
 def main():
     """ Demonstrates applications of the wait-for-event pattern. """
     wait_for_circle_to_reach_edge()
-    # wait_for_sentinel()
-    # wait_for_small_enough_number()
+    wait_for_sentinel()
+    wait_for_small_enough_number()
 
     # The rest of  main  is just for fun, for those interested:
-    # just_for_fun_long_waits()
+    just_for_fun_long_waits()
 
 
 # -----------------------------------------------------------------------------
