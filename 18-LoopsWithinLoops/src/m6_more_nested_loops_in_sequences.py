@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Sana Ebrahimi, Mohammed Noureddine, Vibha Alangar,
          Matt Boutell, Dave Fisher, Mark Hays, their colleagues, and
-         PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -16,9 +16,9 @@ def main():
     print()
     print("Un-comment and re-comment calls in MAIN one by one as you work.")
 
-    # run_test_multiply_numbers()
-    # run_test_print_characters()
-    # run_test_print_characters_slanted()
+    run_test_multiply_numbers()
+    run_test_print_characters()
+    run_test_print_characters_slanted()
 
 
 def run_test_multiply_numbers():
@@ -187,11 +187,14 @@ def multiply_numbers(sequence_of_lists):
        [FYI: The "can be multiplied ..." is an example of DUCK TYPING.]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # -------------------------------------------------------------------------
-
+    for k in range(len(sequence_of_lists)):
+        list = sequence_of_lists[k]
+        for j in range(len(list)):
+            list[j] = list[j] * (k + 1)
 
 def run_test_print_characters():
     """ Tests the    print_characters    function. """
@@ -249,11 +252,14 @@ def print_characters(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # -------------------------------------------------------------------------
-
+    for k in range(len(sequence_of_strings)):
+        string = sequence_of_strings[k]
+        for j in range(len(string)):
+            print(string[j])
 
 def run_test_print_characters_slanted():
     """ Tests the    print_characters_slanted    function. """
@@ -323,14 +329,19 @@ def print_characters_slanted(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #  __
     #  ** HINT: ** Consider using string multiplication for the spaces
     #              and string addition to stitch the spaces to the character.
     # -------------------------------------------------------------------------
-
+    for k in range(len(sequence_of_strings)):
+        string = sequence_of_strings[k]
+        for j in range(len(string)):
+            print(" " * j, end="")
+            print(string[j], end="")
+            print()
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
