@@ -6,30 +6,30 @@ Run this module to see which is faster, and how much so!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Derek Whitley, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Neha Bhasin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # -----------------------------------------------------------------------------
-# TODO: 2. With your instructor, read the code below, where you will see
+# DONE: 2. With your instructor, read the code below, where you will see
 #  two functions each of which produces the list [1, 2, 3, ... n],
 #  for any given n.  Run this module, then answer these questions:
 #    Which runs faster:
 #       the CONCATENATION approach or the APPEND approach?
 #    The slower approach takes about how times as many seconds
 #    as the faster approach,
-#        for a list of size 10,000?
-#        for a list of size 20,000?
-#        for a list of size 40,000?
-#        for a list of size 80,000?
+#        for a list of size 10,000?  96.1 times
+#        for a list of size 20,000?  617.8 times
+#        for a list of size 40,000?  1004.5 times
+#        for a list of size 80,000?  1849.7 times
 #    Do not RUN the code but take a wild guess at:
-#        for a list of size 1,000,000?
+#        for a list of size 1,000,000? 2000 times
 # -----------------------------------------------------------------------------
 
 import time
 
 
 def main():
-    size = 10000
+    size = 80000
 
     # Run and time the CONCATENATION approach:
     start_time = time.time()
