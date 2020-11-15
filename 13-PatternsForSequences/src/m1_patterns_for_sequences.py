@@ -164,10 +164,13 @@ def biggest_at_even(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    sum = 0
+    for k in range (0, len(sequence), 2):
+        sum = sum + sequence[k]
+    return sum
 
 def run_test_smallest_index_where_zero():
     """ Tests the    smallest_index_where_zero    function. """
@@ -283,10 +286,13 @@ def smallest_index_where_zero(sequence):
       :type: sequence: list    or tuple or string
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
-
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
 
 def run_test_multiply_x_coordinates():
     """ Tests the    multiply_x_coordinates    function. """
@@ -383,10 +389,13 @@ def multiply_x_coordinates(circles):
       :type circles: tuple[rg.Circle]
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ------------------------------------------------------------------------
-
+    product = 1
+    for k in range(len(circles)):
+        product = product * circles[k].center.x
+    return product
 
 def run_test_count_same():
     """ Tests the   count_same   function. """
@@ -566,10 +575,16 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(sequence1)):
+        for j in range(len(sequence2)):
+            if k == j:
+                if sequence1[k] == sequence2[j]:
+                    count = count + 1
+    return count
 
 def run_test_index_of_largest_number():
     """ Tests the   index_of_largest_number   function. """
@@ -754,10 +769,16 @@ def index_of_largest_number(numbers, n):
       :type n:       int
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    index = 0
+    max = numbers[0]
+    for k in range(n):
+        if max < numbers[k]:
+            index = k
+            max = numbers[k]
+    return index
 
 def run_test_has_stutters():
     """ Tests the   has_stutters   function. """
@@ -911,10 +932,13 @@ def has_stutters(s):
        :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    for k in range(1, len(s)):
+        if s[k] == s[k - 1]:
+            return True
+    return False
 
 def run_test_shortest_string():
     """ Tests the   shortest_string   function. """
@@ -1039,10 +1063,16 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
-
+    min = len(strings[0])
+    ans = strings[0]
+    for k in range(len(strings)):
+            if min > len(strings[k]):
+                min = len(strings[k])
+                ans = strings[k]
+    return ans
 
 def run_test_is_palindrome():
     """ Tests the   is_palindrome   function. """
@@ -1194,7 +1224,7 @@ def is_palindrome(s):
       :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #     The testing code is already written for you (above).
     #  ___
     #  ########################################################################
@@ -1203,7 +1233,15 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     #  ########################################################################
     # -------------------------------------------------------------------------
-
+    count = 0
+    x = len(s) - 1
+    for k in range(len(s) // 2):
+        if s[k] == s[x]:
+            count = count + 1
+        if count == len(s) // 2:
+            return True
+        x = x - 1
+    return False
 
 def run_test_make_even_numbers():
     """ Tests the   make_even_numbers   function. """
@@ -1258,9 +1296,13 @@ def make_even_numbers(n):
       :type n: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    list = []
+    for k in range(n):
+        list.append(2 * (k + 1))
+    return list
 
 
 def run_test_make_concatenation():
@@ -1342,11 +1384,15 @@ def make_concatenation(strings):
       :type strings: list[str]
     """
     # -------------------------------------------------------------------------
-    # TODO: 11. Implement and test this function.
+    # DONE: 11. Implement and test this function.
     #     The testing code is already written for you (above).
     #   HINT: The   +    operator concatenates ("stiches together")
     #   any two strings.
     # -------------------------------------------------------------------------
+    seq = ""
+    for k in range(len(strings)):
+        seq = seq + strings[k]
+    return seq
 
 
 ###############################################################################
