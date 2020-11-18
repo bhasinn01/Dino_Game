@@ -13,6 +13,7 @@ class Dino:
         self.isjumping = False
         self.v = 7
         self.m = 2
+        self.is_dead = False
 
         self.iswalking = 0
         walk = [self.image_jump]
@@ -29,8 +30,8 @@ class Dino:
             # Change velocity
             self.v = self.v - 1
             # If ground is reached, reset variables.
-            if self.y >= self.screen.get_height() - 72:
-                self.y = self.screen.get_height() - 72
+            if self.y >= self.screen.get_height() - 74:
+                self.y = self.screen.get_height() - 74
                 self.isjumping = False
                 self.v = 7
 
@@ -47,8 +48,12 @@ class Dino:
             self.image = walk[self.iswalking]
         self.screen.blit(self.image, (self.x, self.y))
 
+    def dead(self):
+        if self.is_dead:
+            del self.image
 
-def duck(self):
+
+    def duck(self):
        pass
 
 class Ground:
@@ -141,6 +146,14 @@ class Cacti:
         self.screen.blit(self.display_number1, (self.x, self.y))
         self.screen.blit(self.display_number2, (self.x2, self.y2))
 
+    def hit_by1(self, dino):
+        hitbox = pygame.Rect(self.x, self.y, self.display_number1.get_width(), self.display_number1.get_height())
+        return hitbox.collidepoint(dino.x, dino.y)
+
+    def hit_by2(self, dino):
+        hitbox2 = pygame.Rect(self.x2, self.y2, self.display_number2.get_width(), self.display_number2.get_height())
+        return hitbox2.collidepoint(dino.x, dino.y)
+
 def main():
     pygame.init()
     # Screen title
@@ -153,7 +166,7 @@ def main():
     cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 21)
     cacti = Cacti(screen, 500, screen.get_height() - 80)
-    dino = Dino(screen, 30, screen.get_height() - 72)
+    dino = Dino(screen, 30, screen.get_height() - 74)
 
     while True:
         clock.tick(60)
@@ -177,6 +190,15 @@ def main():
         cacti.draw()
         dino.draw()
 
+        if cacti.hit_by1(dino):
+            dino.is_dead = True
+        if cacti.hit_by2(dino):
+            dino.is_dead = True
+
+
+
+        if dino.is_dead:
+            dino.x = screen.get_width()
 
         pygame.display.update()
 
