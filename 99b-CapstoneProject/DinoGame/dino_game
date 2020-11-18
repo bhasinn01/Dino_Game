@@ -60,18 +60,18 @@ class Cloud:
         self.speed = 1
         self.image2_x = x + 300
         self.image3_x = x + 500
-        self.image2_y = random.randint(0, self.image.get_height())
-        self.image3_y = random.randint(0, self.image.get_height())
+        self.image2_y = random.randint(0, self.image.get_height() - 10)
+        self.image3_y = random.randint(0, self.image.get_height() - 5)
 
     def move(self):
         if (self.x < -self.image.get_width()):
-            self.x = random.randint(0, self.screen.get_width())
+            self.x = random.randint(0, self.screen.get_width()) + 500
         self.x = self.x - self.speed
         if (self.image2_x < -self.image.get_width()):
-            self.image2_x = random.randint(0, self.screen.get_width())
+            self.image2_x = random.randint(300, self.screen.get_width())
         self.image2_x = self.image2_x - self.speed
         if (self.image3_x < -self.image.get_width()):
-            self.image3_x = random.randint(0, self.screen.get_width())
+            self.image3_x = random.randint(500, self.screen.get_width())
         self.image3_x = self.image3_x - self.speed
 
     def draw(self):
