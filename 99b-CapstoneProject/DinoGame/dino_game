@@ -82,6 +82,42 @@ class Cloud:
         self.screen.blit(self.image, (self.image2_x, self.image2_y))
         self.screen.blit(self.image2, (self.image3_x, self.image3_y))
 
+class Cacti:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.x = x
+        self.y = y
+        self.image = pygame.image.load("cacti-big1.png")
+        self.image2 = pygame.image.load("cacti_big2.png")
+        self.image3 = pygame.image.load("cacti_big4.png")
+        self.image4 = pygame.image.load("cacti_small1.png")
+        self.image5 = pygame.image.load("cacti_small2.png")
+        self.image6 = pygame.image.load("cacti_small3.png")
+        self.speed = 5
+        self.x2 = x + 750
+        self.y2 = y + 20
+
+        number_list1 = [self.image, self.image2, self.image3]
+        self.display_number1 = random.choice(number_list1)
+        number_list2 = [self.image4, self.image5, self.image6]
+        self.display_number2 = random.choice(number_list2)
+
+    def move(self):
+        number_list1 = [self.image, self.image2, self.image3]
+        if (self.x < -self.display_number1.get_width()):
+            self.x = 2 * self.screen.get_width()
+            self.display_number1 = random.choice(number_list1)
+        self.x = self.x - self.speed
+        number_list2 = [self.image4, self.image5, self.image6]
+        if (self.x2 < -self.display_number2.get_width()):
+            self.x2 = 2 * self.screen.get_width()
+            self.display_number2 = random.choice(number_list2)
+        self.x2 = self.x2 - self.speed
+
+    def draw(self):
+        self.screen.blit(self.display_number1, (self.x, self.y))
+        self.screen.blit(self.display_number2, (self.x2, self.y2))
+
 def main():
     pygame.init()
     # Screen title
@@ -93,6 +129,7 @@ def main():
 
     cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 19)
+    cacti = Cacti(screen, 500, screen.get_height() - 80)
     dino = Dino(screen, 30, screen.get_height() - 56)
 
     while True:
@@ -113,6 +150,8 @@ def main():
         cloud.draw()
         ground.move()
         ground.draw()
+        cacti.move()
+        cacti.draw()
         dino.draw()
 
 
