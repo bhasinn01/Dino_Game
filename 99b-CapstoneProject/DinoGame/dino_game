@@ -196,6 +196,7 @@ def main():
             dino.is_dead = True
 
 
+
         if dino.is_dead:
             dino.x = screen.get_width()
 
