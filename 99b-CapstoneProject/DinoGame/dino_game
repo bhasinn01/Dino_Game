@@ -9,7 +9,7 @@ class Dino:
         self.y = y
         self.image = pygame.image.load("dino1.png")
         self.isjumping = False
-        self.v = 7.5
+        self.v = 9
         self.m = 1
 
     def draw(self):
@@ -22,9 +22,9 @@ class Dino:
             self.v = self.v - 1
             if self.v < 0:
                 self.m = -1
-            if self.v == -8.5:
+            if self.v == -10:
                 self.isjumping = False
-                self.v = 7.5
+                self.v = 9
                 self.m = 1
 
     def duck(self):
@@ -37,7 +37,7 @@ class Ground:
         self.y = y
         self.image = pygame.image.load("ground.png")
         self.image2 = pygame.image.load("ground.png")
-        self.speed = 5
+        self.speed = 7
         self.original_x = x
 
     def move(self):
@@ -93,8 +93,8 @@ class Cacti:
         self.image4 = pygame.image.load("cacti_small1.png")
         self.image5 = pygame.image.load("cacti_small2.png")
         self.image6 = pygame.image.load("cacti_small3.png")
-        self.speed = 5
-        self.x2 = x + 750
+        self.speed = 7
+        self.x2 = x + 100
         self.y2 = y + 20
 
         number_list1 = [self.image, self.image2, self.image3]
@@ -103,6 +103,8 @@ class Cacti:
         self.display_number2 = random.choice(number_list2)
 
     def move(self):
+        if self.x - self.x2 < 100:
+            self.x2 = self.screen.get_width() + 5
         number_list1 = [self.image, self.image2, self.image3]
         if (self.x < -self.display_number1.get_width()):
             self.x = 2 * self.screen.get_width()
@@ -123,14 +125,14 @@ def main():
     # Screen title
     pygame.display.set_caption("Dino Game")
     # Screen size
-    screen = pygame.display.set_mode((800, 200))
+    screen = pygame.display.set_mode((800, 225))
     # Clock
     clock = pygame.time.Clock()
 
     cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 19)
     cacti = Cacti(screen, 500, screen.get_height() - 80)
-    dino = Dino(screen, 30, screen.get_height() - 56)
+    dino = Dino(screen, 30, screen.get_height() - 72)
 
     while True:
         clock.tick(60)
