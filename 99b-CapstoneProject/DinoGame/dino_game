@@ -7,13 +7,16 @@ class Dino:
         self.screen = screen
         self.x = x
         self.y = y
-        self.image = pygame.image.load("dino1.png")
+        self.image_jump = pygame.image.load("dino1.png")
+        self.image_walk1 = pygame.image.load("dino2.png")
+        self.image_walk2 = pygame.image.load("dino3.png")
         self.isjumping = False
         self.v = 7
         self.m = 2
 
-    def draw(self):
-        self.screen.blit(self.image, (self.x, self.y))
+        self.iswalking = 0
+        walk = [self.image_jump]
+        self.image = walk[self.iswalking]
 
     def jump(self):
         if self.isjumping:
@@ -30,6 +33,20 @@ class Dino:
                 self.y = self.screen.get_height() - 72
                 self.isjumping = False
                 self.v = 7
+
+    def draw(self):
+        if self.isjumping:
+            self.image = self.image_jump
+        else:
+            walk = [self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1,
+                    self.image_walk1, self.image_walk2, self.image_walk2, self.image_walk2, self.image_walk2,
+                    self.image_walk2, self.image_walk2]
+            self.iswalking = self.iswalking + 1
+            if self.iswalking > 11:
+                self.iswalking = 0
+            self.image = walk[self.iswalking]
+        self.screen.blit(self.image, (self.x, self.y))
+
 
 def duck(self):
        pass
