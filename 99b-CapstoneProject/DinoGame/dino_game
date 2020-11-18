@@ -65,13 +65,13 @@ class Cloud:
 
     def move(self):
         if (self.x < -self.image.get_width()):
-            self.x = random.randint(0, self.screen.get_width()) + 500
+            self.x = self.screen.get_width()
         self.x = self.x - self.speed
         if (self.image2_x < -self.image.get_width()):
-            self.image2_x = random.randint(300, self.screen.get_width())
+            self.image2_x = self.screen.get_width()
         self.image2_x = self.image2_x - self.speed
         if (self.image3_x < -self.image.get_width()):
-            self.image3_x = random.randint(500, self.screen.get_width())
+            self.image3_x = self.screen.get_width()
         self.image3_x = self.image3_x - self.speed
 
     def draw(self):
@@ -88,7 +88,7 @@ def main():
     # Clock
     clock = pygame.time.Clock()
 
-    cloud = Cloud(screen, 10)
+    cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 19)
     dino = Dino(screen, 30, screen.get_height() - 56)
 
