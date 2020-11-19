@@ -206,7 +206,7 @@ class Ptero:
             self.x = self.screen.get_width() + 400
         display_position = [self.y, self.y2, self.y3]
         if (self.x < -self.image.get_width()):
-            self.x = 2 * self.screen.get_width() + 2000
+            self.x = 2 * self.screen.get_width() + 2150
             self.display_number = random.choice(display_position)
         self.x = self.x - self.speed
 
