@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import os
 
 class Dino:
     def __init__(self, screen, x, y):
@@ -157,6 +158,8 @@ class Cacti_Big:
         hitbox = pygame.Rect(self.x, self.y, self.display_number1.get_width(), self.display_number1.get_height())
         return hitbox.collidepoint(dino.x, dino.y)
 
+
+
 class Cacti_Small:
     def __init__(self, screen, x, y):
         self.screen = screen
@@ -230,7 +233,6 @@ class Ptero:
         hitbox = pygame.Rect(self.x, self.display_number, self.image.get_width(), self.image.get_height())
         return hitbox.collidepoint(dino.x, dino.y)
 
-
 class Scoreboard:
     def __init__(self, screen):
         self.screen = screen
@@ -239,6 +241,7 @@ class Scoreboard:
         self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
         self.color = (85, 85, 85)
         self.hi_score = 0
+        self.range_increase = 600
 
     def update(self, ground, cloud, big_cacti, small_cacti, ptero):
         win_sound = pygame.mixer.Sound("win.wav")
@@ -263,62 +266,6 @@ class Scoreboard:
             hi_score_string = "HI {}".format(self.hi_score)
             hi_score_image = self.font.render(hi_score_string, True, self.color)
             self.screen.blit(hi_score_image, (self.screen.get_width() - score_image.get_width() - hi_score_image.get_width() - 35, 5))
-
-# def gameplay():
-#     global high_score
-#     gameOver = False
-#     gameQuit = False
-#
-#     while not gameQuit:
-#         while not gameOver:
-#             for event in pygame.event.get():
-#                 if event.type == pygame.QUIT:
-#                     gameQuit = True
-#                     gameOver = True
-#
-#             if dino.is_dead:
-#                 gameOver = True
-#                 if score.score > high_score:
-#                     high_score = score.score
-#
-#             if counter%700 == 699:
-#                 new_ground.speed -= 1
-#                 gamespeed += 1
-#
-#             counter = (counter + 1)
-#
-#         if gameQuit:
-#             break
-#
-#         while gameOver:
-#             if pygame.display.get_surface() == None:
-#                 print("Couldn't load display surface")
-#                 gameQuit = True
-#                 gameOver = False
-#             else:
-#                 for event in pygame.event.get():
-#                     if event.type == pygame.QUIT:
-#                         gameQuit = True
-#                         gameOver = False
-#                     if event.type == pygame.KEYDOWN:
-#                         if event.key == pygame.K_ESCAPE:
-#                             gameQuit = True
-#                             gameOver = False
-#
-#                         if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
-#                             gameOver = False
-#                             gameplay()
-#             highsc.update(high_score)
-#             if pygame.display.get_surface() != None:
-#                 disp_gameOver_msg(retbutton_image,gameover_image)
-#                 if high_score != 0:
-#                     highsc.draw()
-#                     screen.blit(HI_image,HI_rect)
-#                 pygame.display.update()
-#             clock.tick(FPS)
-#
-#     pygame.quit()
-#     quit()
 
 def main():
     pygame.init()
@@ -348,7 +295,10 @@ def main():
                 sys.exit()
 
         screen.fill((235, 235, 235))
-        if scoreboard.score in range(700, 901):
+        increase_range = 1001
+        if scoreboard.score > increase_range:
+            increase_range = increase_range + 1000
+        if scoreboard.score in range(increase_range - 401, increase_range):
                 screen.fill((85, 85, 85))
                 scoreboard.color = (235, 235, 235)
                 ground.image = pygame.image.load("inverse_ground.png")
@@ -418,5 +368,5 @@ def main():
 
         pygame.display.update()
 
-
 main()
+
