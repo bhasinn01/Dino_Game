@@ -1,7 +1,6 @@
 import pygame
 import sys
 import random
-import pickle
 
 class Dino:
     def __init__(self, screen, x, y):
