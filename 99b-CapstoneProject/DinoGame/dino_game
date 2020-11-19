@@ -173,7 +173,7 @@ class Cacti_Small:
 
     def move(self, big_cactus):
         if big_cactus.x - self.x < 100:
-            self.x = self.screen.get_width() + 5
+            self.x = self.screen.get_width() + 10
         number_list2 = [self.image4, self.image5, self.image6]
         if (self.x < -self.display_number2.get_width()):
             self.x = 2 * self.screen.get_width()
@@ -224,6 +224,7 @@ class Scoreboard:
         self.score = 0
         self.original_score = 0
         self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
+        self.color = (85, 85, 85)
 
     def update(self, ground, cloud, big_cacti, small_cacti, ptero):
         if self.score == self.original_score + 100:
@@ -236,7 +237,7 @@ class Scoreboard:
 
     def draw(self):
         score_string = "Score: {}".format(self.score)
-        score_image = self.font.render(score_string, True, (85, 85, 85))
+        score_image = self.font.render(score_string, True, self.color)
         self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
 
 # def gameplay():
@@ -322,6 +323,12 @@ def main():
                 sys.exit()
 
         screen.fill((235, 235, 235))
+        if scoreboard.score > 700:
+            screen.fill((85, 85, 85))
+            scoreboard.color = (235, 235, 235)
+            ground.image = pygame.image.load("inverse_ground.png")
+            ground.image2 = pygame.image.load("inverse_ground.png")
+
 
         cloud.draw()
         ground.draw()
