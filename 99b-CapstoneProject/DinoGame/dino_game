@@ -195,8 +195,8 @@ class Ptero:
         self.image = pygame.image.load("ptero1.png")
         self.image2 = pygame.image.load("ptero2.png")
         self.speed = 7
-        self.y2 = y + 40
-        self.y3 = y + 70
+        self.y2 = y + 30
+        self.y3 = y + 55
 
         display_position = [self.y, self.y2, self.y3]
         self.display_number = random.choice(display_position)
@@ -310,7 +310,7 @@ def main():
     ground = Ground(screen, 0, screen.get_height() - 21)
     big_cacti = Cacti_Big(screen, 500, screen.get_height() - 80)
     small_cacti = Cacti_Small(screen, 600, screen.get_height() - 60)
-    ptero = Ptero(screen, screen.get_width() + 2050, 100)
+    ptero = Ptero(screen, screen.get_width() + 2050, 115)
     dino = Dino(screen, 30, screen.get_height() - 74)
     scoreboard = Scoreboard(screen)
     game_over_image = pygame.image.load("game_over.png")
