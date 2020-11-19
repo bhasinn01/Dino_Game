@@ -73,10 +73,11 @@ class Ground:
         self.speed = 7
         self.original_x = x
 
-    def move(self):
+    def move(self, scoreboard):
         if (self.x < -1203):
             self.x = 0
         self.x = self.x - self.speed
+        scoreboard.score = scoreboard.score + 1
 
     def draw(self):
         self.screen.blit(self.image, (self.x, self.y))
@@ -172,6 +173,17 @@ class Cacti_Small:
         hitbox2 = pygame.Rect(self.x, self.y2, self.display_number2.get_width(), self.display_number2.get_height())
         return hitbox2.collidepoint(dino.x, dino.y)
 
+class Scoreboard:
+    def __init__(self, screen):
+        self.screen = screen
+        self.score = 0
+        self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
+
+    def draw(self):
+        score_string = "Score: {}".format(self.score)
+        score_image = self.font.render(score_string, True, (85, 85, 85))
+        self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
+
 def main():
     pygame.init()
     # Screen title
@@ -188,6 +200,8 @@ def main():
     big_cacti = Cacti_Big(screen, 500, screen.get_height() - 80)
     small_cacti = Cacti_Small(screen, 600, screen.get_height() - 60)
     dino = Dino(screen, 30, screen.get_height() - 74)
+    scoreboard = Scoreboard(screen)
+    game_over_image = pygame.image.load("game_over.png")
 
     while True:
         clock.tick(60)
@@ -201,11 +215,13 @@ def main():
         ground.draw()
         big_cacti.draw()
         small_cacti.draw()
+        scoreboard.draw()
 
         if dino.is_dead:
             dino.dead()
 
         if is_game_over:
+            screen.blit(game_over_image, ((screen.get_width() / 2) - (game_over_image.get_width() / 2), 100))
             pygame.display.update()
             continue
 
@@ -216,7 +232,7 @@ def main():
         dino.jump()
 
         cloud.move()
-        ground.move()
+        ground.move(scoreboard)
         big_cacti.move()
         small_cacti.move(big_cacti)
         dino.draw()
