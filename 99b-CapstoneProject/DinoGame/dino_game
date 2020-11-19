@@ -14,6 +14,9 @@ class Dino:
         self.v = 7
         self.m = 2
         self.is_dead = False
+        self.image_dead1 = pygame.image.load("dino_dead1.png")
+        self.image_dead2 = pygame.image.load("dino_dead2.png")
+        self.dead_image = 0
 
         self.iswalking = 0
         walk = [self.image_jump]
@@ -49,9 +52,13 @@ class Dino:
         self.screen.blit(self.image, (self.x, self.y))
 
     def dead(self):
-        if self.is_dead:
-            del self.image
-
+        dead = [self.image_dead1, self.image_dead1, self.image_dead1, self.image_dead1, self.image_dead1, self.image_dead1, self.image_dead2, self.image_dead2, self.image_dead2, self.image_dead2, self.image_dead2, self.image_dead2]
+        while True:
+            if self.dead_image >= 11:
+                break
+            self.dead_image = self.dead_image + 1
+        self.image = dead[self.dead_image]
+        self.screen.blit(self.image, (self.x, self.y))
 
     def duck(self):
        pass
@@ -194,7 +201,9 @@ def main():
         ground.draw()
         big_cacti.draw()
         small_cacti.draw()
-        dino.draw()
+
+        if dino.is_dead:
+            dino.dead()
 
         if is_game_over:
             pygame.display.update()
@@ -210,6 +219,7 @@ def main():
         ground.move()
         big_cacti.move()
         small_cacti.move(big_cacti)
+        dino.draw()
 
         if big_cacti.hit_by1(dino):
             dino.is_dead = True
@@ -218,8 +228,6 @@ def main():
             dino.is_dead = True
             is_game_over = True
 
-        if dino.is_dead:
-            pass
 
         pygame.display.update()
 
