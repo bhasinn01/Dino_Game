@@ -57,6 +57,7 @@ class Dino:
             if self.duck > 11:
                 self.duck = 0
             self.image = duck[self.duck]
+            self.isducking = False
         else:
             walk = [self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1,
                     self.image_walk1, self.image_walk2, self.image_walk2, self.image_walk2, self.image_walk2,
@@ -344,8 +345,8 @@ def main():
         dino.jump()
 
         if dino.isducking == False:
-            while pressed_keys[pygame.K_DOWN]:
-                dino.isducking = True
+            if pressed_keys[pygame.K_DOWN]:
+                    dino.isducking = True
 
         cloud.move()
         ground.move(scoreboard)
