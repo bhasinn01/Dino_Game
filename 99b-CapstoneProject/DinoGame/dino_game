@@ -149,9 +149,9 @@ class Cacti_Small:
         number_list2 = [self.image4, self.image5, self.image6]
         self.display_number2 = random.choice(number_list2)
 
-    def move(self):
-        # if big_cactus.x - self.x2 < 100:
-        #     self.x2 = self.screen.get_width() + 5
+    def move(self, big_cactus):
+        if big_cactus.x - self.x < 100:
+            self.x = self.screen.get_width() + 5
         number_list2 = [self.image4, self.image5, self.image6]
         if (self.x < -self.display_number2.get_width()):
             self.x = 2 * self.screen.get_width()
@@ -177,7 +177,7 @@ def main():
     cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 21)
     big_cacti = Cacti_Big(screen, 500, screen.get_height() - 80)
-    small_cacti = Cacti_Small(screen, 1000, screen.get_height() - 60)
+    small_cacti = Cacti_Small(screen, 600, screen.get_height() - 60)
     dino = Dino(screen, 30, screen.get_height() - 74)
 
     while True:
@@ -200,7 +200,7 @@ def main():
         ground.draw()
         big_cacti.move()
         big_cacti.draw()
-        small_cacti.move()
+        small_cacti.move(big_cacti)
         small_cacti.draw()
         dino.draw()
 
