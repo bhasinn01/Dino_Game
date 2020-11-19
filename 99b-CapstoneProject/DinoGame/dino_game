@@ -1,3 +1,8 @@
+"""
+This project is based on the no internet chrome t-rex game.
+Author: Neha Bhasin.
+"""
+
 import pygame
 import sys
 import random
