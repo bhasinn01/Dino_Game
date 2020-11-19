@@ -1,5 +1,5 @@
 
-PUT YOUR NAME HERE: _________________________________
+PUT YOUR NAME HERE: Neha Bhasin
 
 NOTE: If you are working by yourself (no teammates), then use this file
 (self_reflection_1.txt).  If you are working with teammates, then the order
@@ -21,7 +21,10 @@ Answers can be BRIEF, but we expect them to be THOUGHTFUL answers.
 1.  Explain, in a sentence or two, something that SURPRISED you
     after you began working on your project.
 
-    [PUT YOUR ANSWER HERE, using as many lines as you need.]
+    What surprised me was I knew more than I thought I did, and anything I did
+    not know how to do I was able to use tesing and outside sources to figure out.
+    I just did not realize over the course that I learned the process for finding
+    solutions to something ideas I came up with.
 
 2.  Identify something that you would have done DIFFERENTLY in your project,
     with hindsight.  Then explain, in a short paragraph, how you did that
@@ -36,4 +39,7 @@ Answers can be BRIEF, but we expect them to be THOUGHTFUL answers.
     of it, and how you will encourage yourself to do it (or its equivalent)
     similarly in future projects.
 
-    [PUT YOUR ANSWER HERE, using as many lines as you need.]
+    In general, I am proud of how I worked through coding the game. I broke it down
+    into little pieces and every time I encountered a problem I made little changes
+    to figure out how I could fix it. I drew stuff out and went in with a list of what
+    was going to be in each class. After breaking it down and figuring stuff out
