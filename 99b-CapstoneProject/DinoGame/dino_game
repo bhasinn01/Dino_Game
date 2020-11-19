@@ -177,7 +177,16 @@ class Scoreboard:
     def __init__(self, screen):
         self.screen = screen
         self.score = 0
+        self.original_score = 0
         self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
+
+    def update(self, ground, cloud, big_cacti, small_cacti):
+        if self.score == self.original_score + 100:
+            cloud.speed = cloud.speed + 0.5
+            ground.speed = ground.speed + 0.5
+            big_cacti.speed = big_cacti.speed + 0.5
+            small_cacti.speed = small_cacti.speed + 0.5
+            self.original_score = self.score
 
     def draw(self):
         score_string = "Score: {}".format(self.score)
@@ -235,6 +244,7 @@ def main():
         ground.move(scoreboard)
         big_cacti.move()
         small_cacti.move(big_cacti)
+        scoreboard.update(ground, cloud, big_cacti, small_cacti)
         dino.draw()
 
         if big_cacti.hit_by1(dino):
