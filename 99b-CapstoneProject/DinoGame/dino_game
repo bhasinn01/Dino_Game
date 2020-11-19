@@ -407,6 +407,7 @@ def main():
         elif small_cacti.hit_by2(dino):
             dino.is_dead = True
             is_game_over = True
+            lose_sound.play()
             ptero.freeze = True
         elif ptero.hit_by(dino):
             dino.is_dead = True
