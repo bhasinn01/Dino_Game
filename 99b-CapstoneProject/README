@@ -13,7 +13,8 @@ In this file:
     randomly appear at 3 different heights. The cacti and pterodactyls have boxes on them, so that if the dino hits the
     obstacles the game is over. The more ground is covered the higher the score so the score is constantly changing as
     the ground is moved. Every 600 score points the time of day changes to night mode for the next 400 points. A high
-    score is kept of the all time highest score. I also added color to the game.
+    score is kept of the all time highest score. I also added color to the game. If you lose the game you have to wait
+    a couple seconds before hitting the space bar to restart it.
 
 2. List the names of the classes in your project.
     The names of the classes I used are Dino, Ground, Cloud, Cacti_Big, Cacti_Small, Ptero, and Scoreboard.
@@ -23,7 +24,7 @@ In this file:
    N/A
 
 4. List the modules (libraries) that you used (the things in IMPORT statements).
-    The modules I used were pygame, sys, and random
+    The modules I used were pygame, sys, time, and random
 
 5. Briefly list what things in the project are beyond what you learned
    from the regular classwork in CSSE 120.  Include the major PyGame features
@@ -34,7 +35,8 @@ In this file:
     to make the dino appear to walk by alternating the image displayed. I learned how to randomly make images appear for the
     clouds, cacti, and pterodactyls. I also figured out how loop the image for the ground so it appears infinite. I learned
     out how to import a new font. I also learned how to read and write on a .txt file through my program which I used for
-    the high score. The program sees if the score is higher then the score it reads from the file and if it is it rewrites
+    the high score. Another thing I learned is how to freeze the display for a couple second using the time module.
+    The program sees if the score is higher then the score it reads from the file and if it is it rewrites
     the new score on the file. The major pygame features I used were setting up a display, loading images, bliting images
     on to the screen, creating rectangles for hitboxes, setting hitbox collide points, creating sound objects for sound effects,
     creating a font object to get a specific font for the game, setting up a clock, setting the frame rate or display refresh rate,
