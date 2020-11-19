@@ -41,6 +41,5 @@ In this file:
     on to the screen, creating rectangles for hitboxes, setting hitbox collide points, creating sound objects for sound effects,
     creating a font object to get a specific font for the game, setting up a clock, setting the frame rate or display refresh rate,
     getting pressed keys, setting up certain keys to do certain things, updating the display, how to quit the program, and set it up
-    so it quits when you hit the red x.
-
+    so it quits when you hit the exit button.
 
