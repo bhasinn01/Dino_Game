@@ -328,6 +328,7 @@ def main():
             scoreboard.color = (235, 235, 235)
             ground.image = pygame.image.load("inverse_ground.png")
             ground.image2 = pygame.image.load("inverse_ground.png")
+            game_over_image = pygame.image.load("inverse_game_over.png")
 
 
         cloud.draw()
