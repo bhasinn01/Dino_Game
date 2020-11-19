@@ -239,6 +239,7 @@ class Scoreboard:
         self.original_score = 0
         self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
         self.color = (85, 85, 85)
+        self.hi_score = 0
 
     def update(self, ground, cloud, big_cacti, small_cacti, ptero):
         if self.score == self.original_score + 100:
@@ -255,8 +256,10 @@ class Scoreboard:
         self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
 
         with open('score_file.txt', 'r') as file:
-            hi_score = file.read()
-            hi_score_string = "HI {}".format(hi_score)
+            self.hi_score = file.read()
+            if self.score > int(self.hi_score):
+                self.hi_score = self.score
+            hi_score_string = "HI {}".format(self.hi_score)
             hi_score_image = self.font.render(hi_score_string, True, self.color)
             self.screen.blit(hi_score_image, (self.screen.get_width() - score_image.get_width() - hi_score_image.get_width() - 35, 5))
 
@@ -362,6 +365,8 @@ def main():
             dino.dead()
 
         if is_game_over:
+            with open('score_file.txt', 'w') as file:
+                file.write(str(scoreboard.hi_score))
             screen.blit(game_over_image, ((screen.get_width() / 2) - (game_over_image.get_width() / 2), 100))
             pygame.display.update()
             continue
@@ -375,6 +380,7 @@ def main():
         if dino.isducking == False:
             if pressed_keys[pygame.K_DOWN]:
                     dino.isducking = True
+
 
         cloud.move()
         ground.move(scoreboard)
