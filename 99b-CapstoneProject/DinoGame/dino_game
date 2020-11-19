@@ -250,7 +250,7 @@ class Scoreboard:
             self.original_score = self.score
 
     def draw(self):
-        score_string = "Score: {}".format(self.score)
+        score_string = "Score {}".format(self.score)
         score_image = self.font.render(score_string, True, self.color)
         self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
 
@@ -258,7 +258,7 @@ class Scoreboard:
             hi_score = file.read()
             hi_score_string = "HI {}".format(hi_score)
             hi_score_image = self.font.render(hi_score_string, True, self.color)
-            self.screen.blit(hi_score_image, (self.screen.get_width() - score_image.get_width() - hi_score_image.get_width() - 5, 5))
+            self.screen.blit(hi_score_image, (self.screen.get_width() - score_image.get_width() - hi_score_image.get_width() - 35, 5))
 
 # def gameplay():
 #     global high_score
