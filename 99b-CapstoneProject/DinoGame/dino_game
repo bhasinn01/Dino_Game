@@ -200,6 +200,9 @@ class Ptero:
 
         display_position = [self.y, self.y2, self.y3]
         self.display_number = random.choice(display_position)
+        self.isflying = 0
+        fly = [self.image]
+        self.fly_image = fly[self.isflying]
 
     def move(self, big_cactus):
         if big_cactus.x - self.x < 100:
@@ -211,7 +214,14 @@ class Ptero:
         self.x = self.x - self.speed
 
     def draw(self):
-        self.screen.blit(self.image, (self.x, self.display_number))
+        fly = [self.image, self.image, self.image, self.image, self.image,
+                self.image, self.image2, self.image2, self.image2, self.image2,
+                self.image2, self.image2]
+        self.isflying = self.isflying + 1
+        if self.isflying > 11:
+            self.isflying = 0
+        self.fly_image = fly[self.isflying]
+        self.screen.blit(self.fly_image, (self.x, self.display_number))
 
     def hit_by(self, dino):
         hitbox = pygame.Rect(self.x, self.display_number, self.image.get_width(), self.image.get_height())
