@@ -197,6 +197,7 @@ class Ptero:
         self.speed = 7
         self.y2 = y + 30
         self.y3 = y + 55
+        self.freeze = False
 
         display_position = [self.y, self.y2, self.y3]
         self.display_number = random.choice(display_position)
@@ -221,6 +222,8 @@ class Ptero:
         if self.isflying > 11:
             self.isflying = 0
         self.fly_image = fly[self.isflying]
+        if self.freeze:
+            self.fly_image = self.image
         self.screen.blit(self.fly_image, (self.x, self.display_number))
 
     def hit_by(self, dino):
@@ -377,12 +380,15 @@ def main():
         if big_cacti.hit_by1(dino):
             dino.is_dead = True
             is_game_over = True
+            ptero.freeze = True
         elif small_cacti.hit_by2(dino):
             dino.is_dead = True
             is_game_over = True
+            ptero.freeze = True
         elif ptero.hit_by(dino):
             dino.is_dead = True
             is_game_over = True
+            ptero.freeze = True
 
 
         pygame.display.update()
