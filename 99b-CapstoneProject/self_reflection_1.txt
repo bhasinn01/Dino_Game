@@ -32,7 +32,10 @@ Answers can be BRIEF, but we expect them to be THOUGHTFUL answers.
     why you would do it differently, and how you would encourage yourself
     to do it (or its equivalent) differently in future projects.
 
-    [PUT YOUR ANSWER HERE, using as many lines as you need.]
+    I would have created a game class so that restarting the game would be easier.
+    Right now you just have it waiting a couple seconds before you press space bar
+    to restart, but it is not very fluid because it has to completely go through the
+    obstacle before you can restart.
 
 3.  Identify something that you are particularly PROUD of your work in your
     project.  Explain, in a short paragraph, what it is, why you are proud
@@ -42,4 +45,8 @@ Answers can be BRIEF, but we expect them to be THOUGHTFUL answers.
     In general, I am proud of how I worked through coding the game. I broke it down
     into little pieces and every time I encountered a problem I made little changes
     to figure out how I could fix it. I drew stuff out and went in with a list of what
-    was going to be in each class. After breaking it down and figuring stuff out
+    was going to be in each class. After breaking it down and figuring stuff out, I was
+    just solving little problems so to see it all come together with every part working
+    is what I am proud of, and I will use that approach to coding in the future. If I
+    had to pick something specific I would say setting up the loop for the obstacles at
+    random or the high score because I learned how to have my program write on to a file.
