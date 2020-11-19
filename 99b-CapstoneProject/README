@@ -11,7 +11,7 @@ In this file:
     onto it and another random cacti image is chosen. The background also has clouds that randomly appear at different
     heights. The pterodactyls work similar to the cacti they flip between two images to give the appears of flight and
     randomly appear at 3 different heights. The cacti and pterodactyls have boxes on them, so that if the dino hits the
-    obstacles the game is over. The more ground is covered the higher the score so the score is constanly changing as
+    obstacles the game is over. The more ground is covered the higher the score so the score is constantly changing as
     the ground is moved. Every 600 score points the time of day changes to night mode for the next 400 points. A high
     score is kept of the all time highest score. I also added color to the game.
 
