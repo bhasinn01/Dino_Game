@@ -173,6 +173,37 @@ class Cacti_Small:
         hitbox2 = pygame.Rect(self.x, self.y2, self.display_number2.get_width(), self.display_number2.get_height())
         return hitbox2.collidepoint(dino.x, dino.y)
 
+class Ptero:
+    def __init__(self, screen, x, y):
+        self.screen = screen
+        self.x = x
+        self.y = y
+        self.image = pygame.image.load("ptero1.png")
+        self.image2 = pygame.image.load("ptero2.png")
+        self.speed = 7
+        self.y2 = y + 40
+        self.y3 = y + 70
+
+        display_position = [self.y, self.y2, self.y3]
+        self.display_number = random.choice(display_position)
+
+    def move(self, big_cactus):
+        if big_cactus.x - self.x < 100:
+            self.x = self.screen.get_width() + 400
+        display_position = [self.y, self.y2, self.y3]
+        if (self.x < -self.image.get_width()):
+            self.x = 2 * self.screen.get_width() + 2000
+            self.display_number = random.choice(display_position)
+        self.x = self.x - self.speed
+
+    def draw(self):
+        self.screen.blit(self.image, (self.x, self.display_number))
+
+    def hit_by(self, dino):
+        hitbox = pygame.Rect(self.x, self.display_number, self.image.get_width(), self.image.get_height())
+        return hitbox.collidepoint(dino.x, dino.y)
+
+
 class Scoreboard:
     def __init__(self, screen):
         self.screen = screen
@@ -180,18 +211,75 @@ class Scoreboard:
         self.original_score = 0
         self.font = pygame.font.Font("KemcoPixelBold.ttf", 20)
 
-    def update(self, ground, cloud, big_cacti, small_cacti):
+    def update(self, ground, cloud, big_cacti, small_cacti, ptero):
         if self.score == self.original_score + 100:
             cloud.speed = cloud.speed + 0.5
             ground.speed = ground.speed + 0.5
             big_cacti.speed = big_cacti.speed + 0.5
             small_cacti.speed = small_cacti.speed + 0.5
+            ptero.speed = ptero.speed + 0.5
             self.original_score = self.score
 
     def draw(self):
         score_string = "Score: {}".format(self.score)
         score_image = self.font.render(score_string, True, (85, 85, 85))
         self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
+
+# def gameplay():
+#     global high_score
+#     gameOver = False
+#     gameQuit = False
+#
+#     while not gameQuit:
+#         while not gameOver:
+#             for event in pygame.event.get():
+#                 if event.type == pygame.QUIT:
+#                     gameQuit = True
+#                     gameOver = True
+#
+#             if dino.is_dead:
+#                 gameOver = True
+#                 if score.score > high_score:
+#                     high_score = score.score
+#
+#             if counter%700 == 699:
+#                 new_ground.speed -= 1
+#                 gamespeed += 1
+#
+#             counter = (counter + 1)
+#
+#         if gameQuit:
+#             break
+#
+#         while gameOver:
+#             if pygame.display.get_surface() == None:
+#                 print("Couldn't load display surface")
+#                 gameQuit = True
+#                 gameOver = False
+#             else:
+#                 for event in pygame.event.get():
+#                     if event.type == pygame.QUIT:
+#                         gameQuit = True
+#                         gameOver = False
+#                     if event.type == pygame.KEYDOWN:
+#                         if event.key == pygame.K_ESCAPE:
+#                             gameQuit = True
+#                             gameOver = False
+#
+#                         if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
+#                             gameOver = False
+#                             gameplay()
+#             highsc.update(high_score)
+#             if pygame.display.get_surface() != None:
+#                 disp_gameOver_msg(retbutton_image,gameover_image)
+#                 if high_score != 0:
+#                     highsc.draw()
+#                     screen.blit(HI_image,HI_rect)
+#                 pygame.display.update()
+#             clock.tick(FPS)
+#
+#     pygame.quit()
+#     quit()
 
 def main():
     pygame.init()
@@ -208,6 +296,7 @@ def main():
     ground = Ground(screen, 0, screen.get_height() - 21)
     big_cacti = Cacti_Big(screen, 500, screen.get_height() - 80)
     small_cacti = Cacti_Small(screen, 600, screen.get_height() - 60)
+    ptero = Ptero(screen, screen.get_width() + 2050, 100)
     dino = Dino(screen, 30, screen.get_height() - 74)
     scoreboard = Scoreboard(screen)
     game_over_image = pygame.image.load("game_over.png")
@@ -225,6 +314,7 @@ def main():
         big_cacti.draw()
         small_cacti.draw()
         scoreboard.draw()
+        ptero.draw()
 
         if dino.is_dead:
             dino.dead()
@@ -244,13 +334,17 @@ def main():
         ground.move(scoreboard)
         big_cacti.move()
         small_cacti.move(big_cacti)
-        scoreboard.update(ground, cloud, big_cacti, small_cacti)
+        scoreboard.update(ground, cloud, big_cacti, small_cacti, ptero)
+        ptero.move(big_cacti)
         dino.draw()
 
         if big_cacti.hit_by1(dino):
             dino.is_dead = True
             is_game_over = True
         elif small_cacti.hit_by2(dino):
+            dino.is_dead = True
+            is_game_over = True
+        elif ptero.hit_by(dino):
             dino.is_dead = True
             is_game_over = True
 
