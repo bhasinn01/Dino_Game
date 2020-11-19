@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import pickle
 
 class Dino:
     def __init__(self, screen, x, y):
@@ -252,6 +253,12 @@ class Scoreboard:
         score_string = "Score: {}".format(self.score)
         score_image = self.font.render(score_string, True, self.color)
         self.screen.blit(score_image, (self.screen.get_width() - score_image.get_width() - 5, 5))
+
+        with open('score_file.txt', 'r') as file:
+            hi_score = file.read()
+            hi_score_string = "HI {}".format(hi_score)
+            hi_score_image = self.font.render(hi_score_string, True, self.color)
+            self.screen.blit(hi_score_image, (self.screen.get_width() - score_image.get_width() - hi_score_image.get_width() - 5, 5))
 
 # def gameplay():
 #     global high_score
