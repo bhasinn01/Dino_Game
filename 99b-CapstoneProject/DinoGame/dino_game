@@ -174,6 +174,8 @@ def main():
     # Clock
     clock = pygame.time.Clock()
 
+    is_game_over = False
+
     cloud = Cloud(screen, random.randint(0, 500))
     ground = Ground(screen, 0, screen.get_height() - 21)
     big_cacti = Cacti_Big(screen, 500, screen.get_height() - 80)
@@ -188,6 +190,16 @@ def main():
 
         screen.fill((235, 235, 235))
 
+        cloud.draw()
+        ground.draw()
+        big_cacti.draw()
+        small_cacti.draw()
+        dino.draw()
+
+        if is_game_over:
+            pygame.display.update()
+            continue
+
         pressed_keys = pygame.key.get_pressed()
         if dino.isjumping == False:
             if pressed_keys[pygame.K_SPACE] or pressed_keys[pygame.K_UP]:
@@ -195,24 +207,19 @@ def main():
         dino.jump()
 
         cloud.move()
-        cloud.draw()
         ground.move()
-        ground.draw()
         big_cacti.move()
-        big_cacti.draw()
         small_cacti.move(big_cacti)
-        small_cacti.draw()
-        dino.draw()
 
         if big_cacti.hit_by1(dino):
             dino.is_dead = True
+            is_game_over = True
         elif small_cacti.hit_by2(dino):
             dino.is_dead = True
-
-
+            is_game_over = True
 
         if dino.is_dead:
-            dino.x = screen.get_width()
+            pass
 
         pygame.display.update()
 
