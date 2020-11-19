@@ -31,7 +31,9 @@ class Dino:
         self.image = walk[self.iswalking]
 
     def jump(self):
+        jump_sound = pygame.mixer.Sound("jump.wav")
         if self.isjumping:
+            jump_sound.play()
             if self.v > 0:
                 F = ((1/2) * self.m * (self.v * self.v))
             else:
@@ -241,7 +243,9 @@ class Scoreboard:
         self.hi_score = 0
 
     def update(self, ground, cloud, big_cacti, small_cacti, ptero):
+        win_sound = pygame.mixer.Sound("win.wav")
         if self.score == self.original_score + 100:
+            win_sound.play()
             cloud.speed = cloud.speed + 0.5
             ground.speed = ground.speed + 0.5
             big_cacti.speed = big_cacti.speed + 0.5
@@ -336,7 +340,8 @@ def main():
     ptero = Ptero(screen, screen.get_width() + 2050, 115)
     dino = Dino(screen, 30, screen.get_height() - 74)
     scoreboard = Scoreboard(screen)
-    game_over_image = pygame.image.load("game_over.png")
+
+    lose_sound = pygame.mixer.Sound("lose.wav")
 
     while True:
         clock.tick(60)
@@ -345,12 +350,17 @@ def main():
                 sys.exit()
 
         screen.fill((235, 235, 235))
-        if scoreboard.score > 700:
-            screen.fill((85, 85, 85))
-            scoreboard.color = (235, 235, 235)
-            ground.image = pygame.image.load("inverse_ground.png")
-            ground.image2 = pygame.image.load("inverse_ground.png")
-            game_over_image = pygame.image.load("inverse_game_over.png")
+        if scoreboard.score in range(700, 901):
+                screen.fill((85, 85, 85))
+                scoreboard.color = (235, 235, 235)
+                ground.image = pygame.image.load("inverse_ground.png")
+                ground.image2 = pygame.image.load("inverse_ground.png")
+                game_over_image = pygame.image.load("inverse_game_over.png")
+        else:
+            ground.image = pygame.image.load("ground.png")
+            ground.image2 = pygame.image.load("ground.png")
+            game_over_image = pygame.image.load("game_over.png")
+            scoreboard.color = (85, 85, 85)
 
 
         cloud.draw()
@@ -392,6 +402,7 @@ def main():
         if big_cacti.hit_by1(dino):
             dino.is_dead = True
             is_game_over = True
+            lose_sound.play()
             ptero.freeze = True
         elif small_cacti.hit_by2(dino):
             dino.is_dead = True
@@ -400,6 +411,7 @@ def main():
         elif ptero.hit_by(dino):
             dino.is_dead = True
             is_game_over = True
+            lose_sound.play()
             ptero.freeze = True
 
 
