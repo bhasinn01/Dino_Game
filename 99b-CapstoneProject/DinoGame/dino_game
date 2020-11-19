@@ -31,9 +31,7 @@ class Dino:
         self.image = walk[self.iswalking]
 
     def jump(self):
-        jump_sound = pygame.mixer.Sound("jump.wav")
         if self.isjumping:
-            jump_sound.play()
             if self.v > 0:
                 F = ((1/2) * self.m * (self.v * self.v))
             else:
@@ -244,7 +242,7 @@ class Scoreboard:
 
     def update(self, ground, cloud, big_cacti, small_cacti, ptero):
         win_sound = pygame.mixer.Sound("win.wav")
-        if self.score == self.original_score + 100:
+        if self.score == self.original_score + 150:
             win_sound.play()
             cloud.speed = cloud.speed + 0.5
             ground.speed = ground.speed + 0.5
@@ -381,8 +379,10 @@ def main():
             continue
 
         pressed_keys = pygame.key.get_pressed()
+        jump_sound = pygame.mixer.Sound("jump.wav")
         if dino.isjumping == False:
             if pressed_keys[pygame.K_SPACE] or pressed_keys[pygame.K_UP]:
+                jump_sound.play()
                 dino.isjumping = True
         dino.jump()
 
