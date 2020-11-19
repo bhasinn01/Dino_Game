@@ -11,6 +11,14 @@ class Dino:
         self.image_walk1 = pygame.image.load("dino2.png")
         self.image_walk2 = pygame.image.load("dino3.png")
         self.isjumping = False
+
+        self.isducking = False
+        self.image_duck1 = pygame.image.load("dino_ducking1.png")
+        self.image_duck2 = pygame.image.load("dino_ducking2.png")
+        self.duck = 0
+        duck = [self.image_duck1]
+        self.image_duck = duck[self.duck]
+
         self.v = 7
         self.m = 2
         self.is_dead = False
@@ -41,6 +49,14 @@ class Dino:
     def draw(self):
         if self.isjumping:
             self.image = self.image_jump
+        elif self.isducking:
+            duck = [self.image_duck1, self.image_duck1, self.image_duck1, self.image_duck1, self.image_duck1,
+                    self.image_duck1, self.image_duck2, self.image_duck2, self.image_duck2, self.image_duck2,
+                    self.image_duck2, self.image_duck2]
+            self.duck = self.duck + 1
+            if self.duck > 11:
+                self.duck = 0
+            self.image = duck[self.duck]
         else:
             walk = [self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1, self.image_walk1,
                     self.image_walk1, self.image_walk2, self.image_walk2, self.image_walk2, self.image_walk2,
@@ -59,9 +75,6 @@ class Dino:
             self.dead_image = self.dead_image + 1
         self.image = dead[self.dead_image]
         self.screen.blit(self.image, (self.x, self.y))
-
-    def duck(self):
-       pass
 
 class Ground:
     def __init__(self, screen, x, y):
@@ -329,6 +342,10 @@ def main():
             if pressed_keys[pygame.K_SPACE] or pressed_keys[pygame.K_UP]:
                 dino.isjumping = True
         dino.jump()
+
+        if dino.isducking == False:
+            while pressed_keys[pygame.K_DOWN]:
+                dino.isducking = True
 
         cloud.move()
         ground.move(scoreboard)
