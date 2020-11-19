@@ -35,11 +35,11 @@ In this file:
     to make the dino appear to walk by alternating the image displayed. I learned how to randomly make images appear for the
     clouds, cacti, and pterodactyls. I also figured out how loop the image for the ground so it appears infinite. I learned
     out how to import a new font. I also learned how to read and write on a .txt file through my program which I used for
-    the high score. Another thing I learned is how to freeze the display for a couple second using the time module.
-    The program sees if the score is higher then the score it reads from the file and if it is it rewrites
-    the new score on the file. The major pygame features I used were setting up a display, loading images, bliting images
-    on to the screen, creating rectangles for hitboxes, setting hitbox collide points, creating sound objects for sound effects,
-    creating a font object to get a specific font for the game, setting up a clock, setting the frame rate or display refresh rate,
-    getting pressed keys, setting up certain keys to do certain things, updating the display, how to quit the program, and set it up
+    the high score. The program sees if the score is higher then the score it reads from the file and if it is it rewrites
+    the new score on the file. Another thing I learned is how to freeze the display for a couple second using the time module.
+    The major pygame features I used were setting up a display, loading images, bliting images on to the screen, creating
+    rectangles for hitboxes, setting hitbox collide points, creating sound objects for sound effects, creating a font object
+    to get a specific font for the game, setting up a clock, setting the frame rate or display refresh rate, getting pressed
+    keys, setting up certain keys to do certain things, updating the display, how to quit the program, and set it up
     so it quits when you hit the exit button.
 
