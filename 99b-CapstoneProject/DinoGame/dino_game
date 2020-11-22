@@ -373,8 +373,6 @@ def main():
             lose_sound.play()
             ptero.freeze = True
 
-
         pygame.display.update()
 
 main()
-
